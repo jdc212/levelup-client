@@ -23,7 +23,7 @@ function Signup(props) {
     event.preventDefault();
 
     try { // eslint-disable-next-line 
-      const response = await api.post("/signup", state);
+      const response = await api.post("/business/signup", state);
       setErrors({ name: "", password: "", email: "" });
       navigate("/login");
     } catch (err) {

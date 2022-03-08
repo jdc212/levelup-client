@@ -38,9 +38,6 @@ export function NavBar() {
                     
                     alt="navbar-background"
                 />
-                <buttom>
-                    <span>Discover More</span>
-                </buttom>
             </div>
         </div>
 
