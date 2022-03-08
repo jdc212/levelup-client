@@ -18,14 +18,14 @@ export default function BusinessDashboard(){
       try {
         const response = await api.get("/points/my-points");
         console.log(response.data)
-        setPrograms(response.data);
+        setPrograms([...response.data]);
         console.log(programs)
       } catch (error) {
         console.error(error);
       }
     }
     fetchPrograms();
-  }, []);
+  }, [programs]);
 
   useEffect(() => {
     async function fetchUserPoints() {
@@ -39,7 +39,7 @@ export default function BusinessDashboard(){
       }
     }
     fetchUserPoints();
-  }, []);
+  }, [users]);
 
    
   function handleChange(event) {
@@ -71,7 +71,7 @@ export default function BusinessDashboard(){
 
   return(
     <div>
-       {/*{users.map((current) => {
+       {users.map((current) => {
         return <ClientList
             key={current._id}
             customerEmail= {current.customerEmail}
@@ -81,7 +81,7 @@ export default function BusinessDashboard(){
             handleSubmitCredit={handleSubmitCredit}
             handleSubmitCompensate={handleSubmitCompensate}
            />
-       })}*/}  
+       })}
     </div>
   )
 
