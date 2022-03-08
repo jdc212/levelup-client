@@ -37,7 +37,7 @@ function Login(props) {
       navigate("/businessdashboard");
     } catch (err) {
       console.error(err.response);
-      props.setErrors({ ...err.response.data.errors });
+      setErrors({ ...err.response.data.errors });
     }
   }
 
