@@ -1,16 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import Home from "./pages/Home/Home";
 import Signup from "./pages/auth/Signup";
 import Login from "./pages/auth/Login";
 import ProtectedRoute from "./pages/auth/ProtectedRoute";
 import BusinessDashboard from "./pages/BusinessDashboard/BusinessDashboard";
-
 import { AuthContextComponent } from "./contexts/authContext";
-
 import { NavBar } from "./components/NavBar/NavBar";
-
 
 function App() {
   return (
@@ -21,7 +17,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/businessdashboard" element={<BusinessDashboard />} />
         <Route path="/navbar" element={<NavBar />} />
-
       </Routes>
     </AuthContextComponent>
   );
