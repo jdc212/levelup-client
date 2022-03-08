@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import styles from "./NavBar.module.css";
+/*import styles from "./NavBar.module.css";*/
 
 
-function NavBar() {
+export function NavBar() {
     return (
         <div className="navBar-container">
             <div className="navBar-icons">
@@ -35,7 +35,7 @@ function NavBar() {
             <div className="navBar-background">
                 <img
                     className="imageHero-menu"
-                    src={navbarBackground}
+                    
                     alt="navbar-background"
                 />
                 <buttom>
@@ -47,5 +47,3 @@ function NavBar() {
     )
         
 };
-
-export default NavBar; 
