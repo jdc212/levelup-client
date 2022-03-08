@@ -11,12 +11,13 @@ import { NavBar } from "./components/NavBar/NavBar";
 function App() {
   return (
     <AuthContextComponent>
+      <NavBar />
       <Routes>
         <Route path="/" element={<ProtectedRoute component={Home} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/businessdashboard" element={<BusinessDashboard />} />
-        <Route path="/navbar" element={<NavBar />} />
+        
       </Routes>
     </AuthContextComponent>
   );

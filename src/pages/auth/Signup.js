@@ -22,7 +22,7 @@ function Signup(props) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    try {
+    try { // eslint-disable-next-line 
       const response = await api.post("/signup", state);
       setErrors({ name: "", password: "", email: "" });
       navigate("/login");
