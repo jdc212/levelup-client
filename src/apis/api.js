@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apis = {
-  development: "http://127.0.0.1:4000/api",
+  development: "http://localhost:4000/api",
   production: "A URL DO SEU SERVIDOR DEPLOYADO NO HEROKU AQUI",
 };
 

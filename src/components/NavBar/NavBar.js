@@ -28,9 +28,9 @@ export function NavBar() {
                 </Link>
             </div>
             <div className="navBar-menu">
-                <buttom>
+                <button>
                     <span>Menu</span>
-                </buttom>
+                </button>
             </div>
             <div className="navBar-background">
                 <img
@@ -38,6 +38,9 @@ export function NavBar() {
                     
                     alt="navbar-background"
                 />
+                <button>
+                    <span>Discover me</span>
+                </button>
             </div>
         </div>
 
