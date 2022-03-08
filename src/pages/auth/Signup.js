@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
+import Btn from "./Btn";
 
 function Signup(props) {
   const [state, setState] = useState({ name: "", password: "", email: "" });
@@ -77,7 +78,7 @@ function Signup(props) {
       </div>
 
       <div>
-        <button type="submit">Signup!</button>
+        <Btn type="submit" label="Signup"/>
 
         <Link to="/login">Already have an account? Click here to login.</Link>
       </div>
