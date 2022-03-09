@@ -28,6 +28,7 @@ export function FormAddUser() {
       await event.preventDefault();
       await api.post("/user-points/create-card", form);
       clearForm();
+      navigate("/");
       navigate("/businessdashboard");
     } catch (error) {
       console.error(error);
@@ -45,7 +46,7 @@ export function FormAddUser() {
           value={form.customerEmail}
           onChange={handleChange}
         />
-        <label htmlFor="pointsAccumulated">Points Accumulated</label>
+        <label htmlFor="pointsAccumulated">Points to be Credit</label>
         <input
           id="pointsAccumulated"
           name="pointsAccumulated"
