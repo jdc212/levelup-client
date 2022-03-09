@@ -7,6 +7,7 @@ import ProtectedRoute from "./pages/auth/ProtectedRoute";
 import BusinessDashboard from "./pages/BusinessDashboard/BusinessDashboard";
 import { AuthContextComponent } from "./contexts/authContext";
 import { NavBar } from "./components/NavBar/NavBar";
+import BusinessProfileInfo from "./components/BusinessProfileInfo/BusinessProfileInfo";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<ProtectedRoute component={Home} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/businessprofileinfo" element={<BusinessProfileInfo />} />
         <Route path="/businessdashboard" element={<BusinessDashboard />} />
         
       </Routes>
