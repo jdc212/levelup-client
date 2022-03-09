@@ -17,11 +17,6 @@ function Login(props) {
   });
 
   const navigate = useNavigate();
-  
-  const initialValues = { 
-   password: "",
-   email: "" }
-
 
   const validation = {
     email: Yup.string()
@@ -31,7 +26,7 @@ function Login(props) {
   };
 
   const formik = useFormik({
-    initialValues: initialValues,
+    initialValues: state,
     validationSchema: Yup.object(validation),
     onSubmit: (values) => {
       async function login() {
@@ -67,7 +62,7 @@ function Login(props) {
             <div>
               <h2>E-mail Address</h2>
               <NewInput
-                type="text"
+                type="email"
                 name="email"
                 label="e-mail"
                 id="signupFormEmail"

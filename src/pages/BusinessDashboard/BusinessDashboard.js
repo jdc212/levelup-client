@@ -93,7 +93,7 @@ export default function BusinessDashboard() {
             customerEmail= {current.customerEmail}
             pointsAccumulated= {current.pointsAccumulated}
             services={programs.map((program) => program.service)}    
-            //creditSystem={programs.filter((program) => {return program === Object.values(formCredit)[0]} ).creditSystem}
+            //creditSystem={programs.filter((program) => {return program == Object.values(formCredit)[0]} ).creditSystem}
             onChangeCredit={handleChangeCredit}
             onChangeCompensate={handleChangeCompensate}
             handleSubmitCredit={handleSubmitCredit}
