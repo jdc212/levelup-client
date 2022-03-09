@@ -27,8 +27,7 @@ export default function BusinessDashboard() {
     fetchPrograms();
   }, []);
 
-  {
-    /*useEffect(() => {
+    useEffect(() => {
     async function fetchUserPoints() {
       try {
         const response2 = await api.get("/user-points/user-points");
@@ -41,8 +40,7 @@ export default function BusinessDashboard() {
       }
     }
     fetchUserPoints();
-  }, [users]);*/
-  }
+  }, []);
 
   function handleChange(event) {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -79,18 +77,19 @@ export default function BusinessDashboard() {
   return (
     <div>
       <FormAddUser/>
-
-      {/*{users.map((current) => {
+      
+      <h3>Users Points</h3>
+        {users.map((current) => {
         return <ClientList
             key={current._id}
             customerEmail= {current.customerEmail}
             pointsAccumulated= {current.pointsAccumulated}
-            service={programs.map((program) => program.service)}    
+            //service={programs.map((program) => program.service)}    
             onChange={handleChange}
             handleSubmitCredit={handleSubmitCredit}
             handleSubmitCompensate={handleSubmitCompensate}
            />
-       })}*/}
+       })}
     </div>
   );
 }
