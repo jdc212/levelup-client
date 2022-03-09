@@ -13,9 +13,9 @@ export function ClientList(props){
             <form onSubmit={props.handleSubmitCredit}>
               <h4>Credit Points</h4>
               <label htmlFor="credit">Choose Program</label>
-              <select id="credit" name="credit" value={props.program} onChange={props.onChange}>
+              <select id="credit" name="credit" value={props.program} onChange={props.onChangeCredit} >
                 {props.services.map((service) => {
-                  return <option value={service}>{service}</option>})}
+                  return <option key={service} value={service}>{service}</option>})}
               </select>
               <p>Points to Credit: {props.creditSystem}</p>
               <button type="submit">Credit</button>  
@@ -23,8 +23,8 @@ export function ClientList(props){
             
             <form className={styles.compensateOrganizer} onSubmit={props.handleSubmitCompensate}>
               <h4>Compensate Points</h4>
-              <label htmlFor="compensate">Points to Compensate</label>
-              <input id="compensate" name="compensate" value={props.value} onChange={props.onChange}/>
+              <label htmlFor="number">Points to Compensate</label>
+              <input id="number" name="number" value={props.number} onChange={props.onChangeCompensate}/>
               <button type="submit">Compensate</button>
             </form>
           </section>

@@ -9,9 +9,9 @@ export default function BusinessDashboard() {
 
   const [programs, setPrograms] = useState([]);
   const [users, setUsers] = useState([]);
-  const [form, setForm] = useState([]);
-  const [loading, setLoading] = useState(true);
-
+  const [formCredit, setFormCredit] = useState();
+  const [formCompensate, setFormCompensate] = useState();
+    
   console.log(setPrograms);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function BusinessDashboard() {
       try {
         const response2 = await api.get("/user-points/user-points");
         console.log(response2.data)
-        setUsers([...response2.data]);
+        setUsers([...response2.data.reverse()]);
         console.log(users)
 
       } catch (error) {
@@ -42,32 +42,39 @@ export default function BusinessDashboard() {
     fetchUserPoints();
   }, []);
 
-  function handleChange(event) {
-    setForm({ ...form, [event.target.name]: event.target.value });
+  function handleChangeCredit(event) {
+    setFormCredit({ ...formCredit, [event.target.name]: event.target.value });
   }
+  
 
   async function handleSubmitCredit(event) {
     event.preventDefault();
     try {
       const response = await api.post(
         "/:pointId/add-points/:userPointsId",
-        form
+        formCredit
       );
       console.log(response.data);
+      navigate("/");
       navigate("/businessdashboard");
     } catch (error) {
       console.log(error);
     }
   }
 
+  function handleChangeCompensate(event) {
+    setFormCompensate({ ...formCompensate, [event.target.name]: event.target.value });
+  }
+
   async function handleSubmitCompensate(event) {
     event.preventDefault();
     try {
       const response = await api.post(
-        "/:pointId/credit-points/:userPointsId",
-        form
+        "/credit-points/:userPointsId",
+        formCompensate
       );
       console.log(response.data);
+      navigate("/");
       navigate("/businessdashboard");
     } catch (error) {
       console.log(error);
@@ -86,7 +93,9 @@ export default function BusinessDashboard() {
             customerEmail= {current.customerEmail}
             pointsAccumulated= {current.pointsAccumulated}
             services={programs.map((program) => program.service)}    
-            onChange={handleChange}
+            //creditSystem={programs.filter((program) => {return program === Object.values(formCredit)[0]} ).creditSystem}
+            onChangeCredit={handleChangeCredit}
+            onChangeCompensate={handleChangeCompensate}
             handleSubmitCredit={handleSubmitCredit}
             handleSubmitCompensate={handleSubmitCompensate}
            />
