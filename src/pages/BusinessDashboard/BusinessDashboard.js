@@ -18,7 +18,7 @@ export default function BusinessDashboard() {
     async function fetchPrograms() {
       try {
         const response = await api.get("/points/my-points");
-        setPrograms([response.data]);
+        setPrograms([...response.data]);
         console.log(programs);
       } catch (error) {
         console.error(error);
@@ -79,12 +79,13 @@ export default function BusinessDashboard() {
       <FormAddUser/>
       
       <h3>Users Points</h3>
+        
         {users.map((current) => {
         return <ClientList
             key={current._id}
             customerEmail= {current.customerEmail}
             pointsAccumulated= {current.pointsAccumulated}
-            //service={programs.map((program) => program.service)}    
+            services={programs.map((program) => program.service)}    
             onChange={handleChange}
             handleSubmitCredit={handleSubmitCredit}
             handleSubmitCompensate={handleSubmitCompensate}

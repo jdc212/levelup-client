@@ -14,8 +14,8 @@ export function ClientList(props){
               <h4>Credit Points</h4>
               <label htmlFor="credit">Choose Program</label>
               <select id="credit" name="credit" value={props.program} onChange={props.onChange}>
-                {/*props.services.map((service) => {
-                  return <option value={service}>{service}</option>})*/}
+                {props.services.map((service) => {
+                  return <option value={service}>{service}</option>})}
               </select>
               <p>Points to Credit: {props.creditSystem}</p>
               <button type="submit">Credit</button>  
