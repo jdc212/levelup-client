@@ -13,6 +13,7 @@ export default function BusinessDashboard() {
   const [reload, setReload] = useState(false);
   const [user, setUser] = useState([]);
   const [backup, setBackup] = useState([]);
+  /* const [isCredited, setIsCredited] = useState(false); */
 
   console.log(setPrograms);
 
@@ -64,15 +65,6 @@ export default function BusinessDashboard() {
     
   }
 
-  
-  function refreshPage() {
-     /* window.location.reload(false);*/
-     setReload(true);
-      
-
-    }
-    
-   
 
 
   return (
@@ -102,9 +94,9 @@ export default function BusinessDashboard() {
     <div>
     
       <FormAddUser />
-      
-      <h3>Search Users</h3>
-      <SearchBar placeholder="Search" filterAPI={filterUserEmail} /><button onClick={refreshPage}>Refresh</button>
+      <FormAddPromo />
+      <SearchBar placeholder="Search" filterAPI={filterUserEmail} />
+
 
       
 
@@ -122,6 +114,9 @@ export default function BusinessDashboard() {
               };
             })}
             reloadPage={setReload}
+            /*isCredited={setIsCredited}
+            creditState={isCredited}
+            filterUserEmail={filterUserEmail}*/
           />
         );
       })}
