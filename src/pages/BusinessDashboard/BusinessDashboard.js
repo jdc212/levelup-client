@@ -70,6 +70,7 @@ export default function BusinessDashboard() {
     <div>
     
       <FormAddUser />
+      <FormAddPromo />
       <SearchBar />
 
       <h3>Users Points</h3>
