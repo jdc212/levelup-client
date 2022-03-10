@@ -59,7 +59,6 @@ export default function EditBusinessProfile() {
           <h2 className={styles.title}>Profile:</h2>
           <label htmlFor="name">Business name:</label>
           <input
-            /*maxlength="32"*/
             id="name"
             placeholder="Company Name"
             name="name"
@@ -68,7 +67,6 @@ export default function EditBusinessProfile() {
           />
           <label htmlFor="dba">Doing business as</label>
           <input
-            /*maxlength="32"*/
             id="dba"
             placeholder="DBA"
             name="dba"
@@ -103,7 +101,6 @@ export default function EditBusinessProfile() {
           />
           <label htmlFor="address">Address</label>
           <input
-            maxlength="128"
             id="address"
             placeholder="Enter full address"
             name="address"

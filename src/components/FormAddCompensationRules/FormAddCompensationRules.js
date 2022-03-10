@@ -30,7 +30,6 @@ export function FormAddCompensationRules(props) {
       await event.preventDefault();
       await api.post("/compensation-rule/create-rule", form);
       clearForm();
-      props.reloadPage(true);
     } catch (error) {
       console.error(error);
     }
