@@ -8,52 +8,57 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 
-function Login(props) {
-  const authContext = useContext(AuthContext);
-  const [state, setState] = useState({ password: "", email: "" });
-  const [errors, setErrors] = useState({
-    email: null,
-    password: null,
-  });
+function Login() {
+  const { setLoggedInUser } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-  const validation = {
-    email: Yup.string()
-      .email("E-mail inválido.")
-      .required("Os campos são obrigatórios."),
-    password: Yup.string().required("Os campos são obrigatórios."),
-  };
-
   const formik = useFormik({
-    initialValues: state,
-    validationSchema: Yup.object(validation),
+    initialValues: {
+      email: "",
+      password: "",
+    },
+
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("E-mail inválido.")
+        .required("Os campos são obrigatórios."),
+      password: Yup.string().required("Os campos são obrigatórios."),
+      type: Yup.string().required("Os campos são obrigatórios"),
+    }),
     onSubmit: (values) => {
       async function login() {
         try {
-          const response = await api.post("/business/login", values);
-          console.log(response);
+          let response;
+          setLoading(true);
 
-          authContext.setLoggedInUser({ ...response.data });
-    
+          response = await api.post("/business/login", values);
+
+          setLoggedInUser({
+            token: response.data.token,
+            user: response.data.user,
+          });
+
           localStorage.setItem(
             "loggedInUser",
             JSON.stringify({
-              ...response.data
+              token: response.data.token,
+              user: response.data.user,
             })
           );
-          setErrors({ password: "", email: "" });
+          setLoading(false);
+
+          //Direciona o usuário para o dashboard
           navigate("/businessdashboard");
-        } catch (err) {
-          console.error(err.response);
-          setErrors({ ...err.response.data.errors });
+        } catch (e) {
+          setLoading(false);
           toast.error("Usuário ou senha incorreto");
         }
       }
       login();
     },
   });
-
 
   return (
     <div className="signin">
@@ -95,10 +100,37 @@ function Login(props) {
                     {formik.errors.password}
                   </div>
                 ) : null}
+            
+            <div>
+              <NewInput
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+              />
+              <label htmlFor="remember-me">
+                Lembrar-me
+              </label>
+            </div>
+            <div>
+              <Link to="/forgot-password">
+                Esqueceu sua senha?
+              </Link>
+            </div>
 
             <div>
-              <Btn type="submit" label="Login"/>
-
+              <Btn
+                label="Login!"
+                disabled={loading}
+                type="submit"
+                    > {loading ? (
+                      <>
+                        <span className="cadastrando"></span>
+                        Cadastrando...
+                      </>
+                    ) : (
+                      "Login!"
+                    )}                  
+              </Btn>
               <Link to="/signup">Don't have an account? Click here to signup!</Link>
             </div>
       </form>
