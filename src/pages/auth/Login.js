@@ -4,6 +4,9 @@ import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
 import NewInput from "./NewInput";
 import Btn from "./Btn";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import toast, { Toaster } from "react-hot-toast";
 
 function Login(props) {
   const authContext = useContext(AuthContext);
@@ -15,48 +18,64 @@ function Login(props) {
 
   const navigate = useNavigate();
 
-  function handleChange(event) {
-    setState({
-      ...state,
-      [event.currentTarget.name]: event.currentTarget.value,
-    });
-  }
+  const validation = {
+    email: Yup.string()
+      .email("E-mail inválido.")
+      .required("Os campos são obrigatórios."),
+    password: Yup.string().required("Os campos são obrigatórios."),
+  };
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    try {
-      const response = await api.post("/business/login", state);
-      console.log(response);
+  const formik = useFormik({
+    initialValues: state,
+    validationSchema: Yup.object(validation),
+    onSubmit: (values) => {
+      async function login() {
+        try {
+          const response = await api.post("/business/login", values);
+          console.log(response);
 
-      authContext.setLoggedInUser({ ...response.data });
-      localStorage.setItem(
-        "loggedInUser",
-        JSON.stringify({ ...response.data })
-      );
-      setErrors({ password: "", email: "" });
-      navigate("/businessdashboard");
-    } catch (err) {
-      console.error(err.response);
-      setErrors({ ...err.response.data.errors });
-    }
-  }
+          authContext.setLoggedInUser({ ...response.data });
+    
+          localStorage.setItem(
+            "loggedInUser",
+            JSON.stringify({
+              ...response.data
+            })
+          );
+          setErrors({ password: "", email: "" });
+          navigate("/businessdashboard");
+        } catch (err) {
+          console.error(err.response);
+          setErrors({ ...err.response.data.errors });
+          toast.error("Usuário ou senha incorreto");
+        }
+      }
+      login();
+    },
+  });
+
 
   return (
     <div className="signin">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={formik.handleSubmit}>
             <h1>Login</h1>
             <div>
               <h2>E-mail Address</h2>
               <NewInput
-                type="text"
+                type="email"
                 name="email"
                 label="e-mail"
                 id="signupFormEmail"
-                value={state.email}
-                error={errors.email}
-                onChange={handleChange}
+                value={formik.values.email}
+                error={formik.errors.email}
+                onChange={formik.handleChange}
               />
             </div>
+            {(formik.touched.email && formik.errors.email) ?
+                (<div>
+                    {formik.errors.email}
+                  </div>
+                ) : null}
 
             <div>
               <h2>Password</h2>
@@ -65,11 +84,17 @@ function Login(props) {
                 name="password"
                 label="password"
                 id="signupFormPassword"
-                value={state.password}
-                error={errors.password}
-                onChange={handleChange}
+                value={formik.values.password}
+                error={formik.errors.password}
+                onChange={formik.handleChange}
               />
             </div>
+
+            {(formik.touched.password && formik.errors.password) ?
+                (<div>
+                    {formik.errors.password}
+                  </div>
+                ) : null}
 
             <div>
               <Btn type="submit" label="Login"/>
@@ -77,6 +102,31 @@ function Login(props) {
               <Link to="/signup">Don't have an account? Click here to signup!</Link>
             </div>
       </form>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#fff",
+            color: "#000",
+          },
+
+          success: {
+            duration: 3000,
+            theme: {
+              primary: "green",
+              secondary: "black",
+            },
+          },
+        }}
+      />
+
+
     </div>
     
   );
