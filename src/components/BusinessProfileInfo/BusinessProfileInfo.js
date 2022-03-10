@@ -11,7 +11,7 @@ export default function EditBusinessProfile() {
     CNPJ: "",
     email: "",
     phone: "",
-   address: { street:"", number:0, neighborhood: "", city: "", state: "", zipcode: ""},
+    address: "",
     /*img: "",*/
   });
 
@@ -101,7 +101,7 @@ export default function EditBusinessProfile() {
             value={form.phone}
             onChange={handleChange}
           />
-          {/*<label htmlFor="address">Address</label>
+          <label htmlFor="address">Address</label>
           <input
             maxlength="128"
             id="address"
@@ -111,9 +111,9 @@ export default function EditBusinessProfile() {
             type="text"
             value={form.address}
             onChange={handleChange}
-          />*/}
+          />
 
-          <label htmlFor="address">Address</label>
+          {/*<label htmlFor="address">Address</label>
           <input
             id="street"
             placeholder="Enter street name"
@@ -166,7 +166,7 @@ export default function EditBusinessProfile() {
             type="text"
             value={form.address.zipcode}
             onChange={handleChange}
-          />
+          /> */}
           {/*<label htmlFor="img">Link para logo ou imagem de seu projeto:</label>
           <input id="img" name="img" value={form.img} onChange={handleChange} />*/}
           <button type="submit">
