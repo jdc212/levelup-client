@@ -92,7 +92,7 @@ export default function BusinessDashboard() {
           launch={current.launch}
           deadline={current.deadline}
           service={current.service} 
-          
+  
           reloadPage={setReload}
         />
       );
