@@ -1,9 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import api from "../../apis/api";
 
-export function FormAddCompensationRules() {
-  const navigate = useNavigate();
+export function FormAddCompensationRules(props) {
 
   const [form, setForm] = useState({
     launch: "",
@@ -19,7 +17,7 @@ export function FormAddCompensationRules() {
   }
 
   function clearForm() {
-    form({
+    setForm({
       launch: "",
       expirationDate: "",
       rules: "",
@@ -32,7 +30,7 @@ export function FormAddCompensationRules() {
       await event.preventDefault();
       await api.post("/compensation-rule/create-rule", form);
       clearForm();
-      navigate("/businessdashboard");
+      props.reloadPage(true);
     } catch (error) {
       console.error(error);
     }

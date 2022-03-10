@@ -6,14 +6,14 @@ export function NavBar() {
     return (
         <div className="navBar-container">
             <div className="navBar-icons">
-                <Link to="/clients">
-                    <div className="navBar-icon">
-                        <span>Clients</span>
-                    </div>
-                </Link>
                 <Link to="/business">
                     <div className="navBar-icon">
                         <span>Business</span>
+                    </div>
+                </Link>
+                <Link to="/clients">
+                    <div className="navBar-icon">
+                        <span>Clients</span>
                     </div>
                 </Link>
                 <Link to="/corporate">
