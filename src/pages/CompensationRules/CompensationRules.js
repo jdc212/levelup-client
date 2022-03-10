@@ -1,39 +1,40 @@
-import styles from "./CompensationRules.module.css";
+//import styles from "./CompensationRules.module.css";
 import { useState, useEffect } from "react";
 import api from "../../apis/api";
 import { FormAddCompensationRules } from "../../components/FormAddCompensationRules/FormAddCompensationRules";
+import { CompensationRulesList } from "../../components/CompensationRulesList/CompensationRulesList";
 
 export default function CompensationRules() {
-  const [compensation, setCompensation] = useState({
-    launch: "",
-    expirationDate: "",
-    rules: "",
-    optionalAddition: { addition: "", additionDate: "" },
-  });
+  const [form, setForm] = useState([]);
+  const [reload, setReload] = useState(false);
 
   useEffect(() => {
-    async function fetchPrograms() {
+    async function fetchCompensation() {
       try {
         const response = await api.get("/compensation-rule/compensation");
-        setCompensation([...response.data]);
+        setForm([...response.data]);
       } catch (error) {
         console.error(error);
       }
     }
-    fetchPrograms();
-  }, []);
-
+    fetchCompensation();
+  }, [reload]);
 
   return (
-    <div className={styles.clientList}>
+    <>
       <FormAddCompensationRules />
-      <section>
-        <p>Launch Date: {compensation.launch}</p>
-        <p>Expiration Date: {compensation.expirationDate}</p>
-        <p>Rules: {compensation.rules}</p>
-        {/*<p>Addicional Rules: {compensation.optionalAddition.addition}</p>*/}
-        {/*<p>Addicional Date: {compensation.optionalAddition.additionDate}</p>*/}
-      </section>
-    </div>
+      <div>
+        {form.map((current) => {
+          return (
+            <CompensationRulesList
+              key={current._id}
+              launch={current.launch}
+              expirationDate={current.expirationDate}
+              rules={current.rules}
+              reloadPage={setReload}
+          />);
+        })}
+      </div>
+    </>
   );
 }

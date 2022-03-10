@@ -102,10 +102,11 @@ export default function BusinessDashboard() {
     <div>
     
       <FormAddUser />
-      <FormAddPromo />
+      
+      <h3>Search Users</h3>
       <SearchBar placeholder="Search" filterAPI={filterUserEmail} /><button onClick={refreshPage}>Refresh</button>
 
-      <h3>Users Points</h3>
+      
 
       {user.map((current) => {
         return (

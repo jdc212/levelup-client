@@ -8,51 +8,46 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 
-function Login() {
-  const { setLoggedInUser } = useContext(AuthContext);
-  const [loading, setLoading] = useState(false);
+function Login(props) {
+  const authContext = useContext(AuthContext);
+  const [state, setState] = useState({ password: "", email: "" });
+  const [loading, setLoading] = useState(false)
+  const [errors, setErrors] = useState({
+    email: null,
+    password: null,
+  });
 
   const navigate = useNavigate();
 
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
+  const validation = {
+    email: Yup.string()
+      .email("E-mail inválido.")
+      .required("Os campos são obrigatórios."),
+    password: Yup.string().required("Os campos são obrigatórios."),
+  };
 
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .email("E-mail inválido.")
-        .required("Os campos são obrigatórios."),
-      password: Yup.string().required("Os campos são obrigatórios."),
-      type: Yup.string().required("Os campos são obrigatórios"),
-    }),
+  const formik = useFormik({
+    initialValues: state,
+    validationSchema: Yup.object(validation),
     onSubmit: (values) => {
       async function login() {
         try {
-          let response;
-          setLoading(true);
+          const response = await api.post("/business/login", values);
+          console.log(response);
 
-          response = await api.post("/business/login", values);
-
-          setLoggedInUser({
-            token: response.data.token,
-            user: response.data.user,
-          });
-
+          authContext.setLoggedInUser({ ...response.data });
+    
           localStorage.setItem(
             "loggedInUser",
             JSON.stringify({
-              token: response.data.token,
-              user: response.data.user,
+              ...response.data
             })
           );
-          setLoading(false);
-
-          //Direciona o usuário para o dashboard
+          setErrors({ password: "", email: "" });
           navigate("/businessdashboard");
-        } catch (e) {
-          setLoading(false);
+        } catch (err) {
+          console.error(err.response);
+          setErrors({ ...err.response.data.errors });
           toast.error("Usuário ou senha incorreto");
         }
       }
