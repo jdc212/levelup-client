@@ -11,14 +11,14 @@ export default function EditBusinessProfile() {
     CNPJ: "",
     email: "",
     phone: "",
-    address: "",
+   /* address: { street:"", number:0, neighborhood: "", city: "", state: "", zipcode: ""},*/
     /*img: "",*/
   });
 
   useEffect(() => {
     async function fetchBusiness() {
       try {
-        const response = await api.get("business/profile");
+        const response = await api.get("/business/profile");
         setForm({ ...response.data });
     } catch (error) {
         console.error(error);
@@ -59,7 +59,7 @@ export default function EditBusinessProfile() {
           <h2 className={styles.title}>Profile:</h2>
           <label htmlFor="name">Business name:</label>
           <input
-            maxlength="32"
+            /*maxlength="32"*/
             id="name"
             placeholder="Company Name"
             name="name"
@@ -68,7 +68,7 @@ export default function EditBusinessProfile() {
           />
           <label htmlFor="dba">Doing business as</label>
           <input
-            maxlength="32"
+            /*maxlength="32"*/
             id="dba"
             placeholder="DBA"
             name="dba"
@@ -77,10 +77,9 @@ export default function EditBusinessProfile() {
           />
           <label htmlFor="CNPJ">CNPJ</label>
           <input
-            maxlength="64"
             id="CNPJ"
             placeholder="CNPJ"
-            name="description"
+            name="CNPJ"
             value={form.CNPJ}
             onChange={handleChange}
           />
@@ -99,12 +98,10 @@ export default function EditBusinessProfile() {
             placeholder="Phone"
             name="phone"
             type="number"
-            step="0.01"
-            min="1"
             value={form.phone}
             onChange={handleChange}
           />
-          <label htmlFor="address">Address</label>
+          {/*<label htmlFor="address">Address</label>
           <input
             maxlength="128"
             id="address"
@@ -113,6 +110,61 @@ export default function EditBusinessProfile() {
             maxLength={50}
             type="text"
             value={form.address}
+            onChange={handleChange}
+          />*/}
+
+          <label htmlFor="address">Address</label>
+          <input
+            id="street"
+            placeholder="Enter street name"
+            name="street"
+            maxLength={50}
+            type="text"
+            value={form.address.street}
+            onChange={handleChange}
+          />
+          <input
+            id="number"
+            placeholder="number"
+            name="number"
+            type="Number"
+            value={form.address.number}
+            onChange={handleChange}
+          />
+          <input
+            id="neighborhood"
+            placeholder="neighborhood"
+            name="neighborhood"
+            maxLength={50}
+            type="text"
+            value={form.address.neighborhood}
+            onChange={handleChange}
+          />
+          <input
+            id="city"
+            placeholder="city"
+            name="city"
+            maxLength={50}
+            type="text"
+            value={form.address.city}
+            onChange={handleChange}
+          />
+          <input
+            id="state"
+            placeholder="State"
+            name="state"
+            maxLength={50}
+            type="text"
+            value={form.address.state}
+            onChange={handleChange}
+          />
+          <input
+            id="zipcode"
+            placeholder="zipcode"
+            name="zipcode"
+            maxLength={50}
+            type="text"
+            value={form.address.zipcode}
             onChange={handleChange}
           />
           {/*<label htmlFor="img">Link para logo ou imagem de seu projeto:</label>
