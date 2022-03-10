@@ -6,7 +6,6 @@ import { CompensationRulesList } from "../../components/CompensationRulesList/Co
 
 export default function CompensationRules() {
   const [form, setForm] = useState([]);
-  const [reload, setReload] = useState(false);
 
   useEffect(() => {
     async function fetchCompensation() {
@@ -18,7 +17,7 @@ export default function CompensationRules() {
       }
     }
     fetchCompensation();
-  }, [reload]);
+  }, []);
 
   return (
     <>
@@ -31,7 +30,6 @@ export default function CompensationRules() {
               launch={current.launch}
               expirationDate={current.expirationDate}
               rules={current.rules}
-              reloadPage={setReload}
           />);
         })}
       </div>
