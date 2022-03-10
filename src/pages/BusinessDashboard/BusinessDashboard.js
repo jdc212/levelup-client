@@ -13,7 +13,7 @@ export default function BusinessDashboard() {
   const [reload, setReload] = useState(false);
   const [user, setUser] = useState([]);
   const [backup, setBackup] = useState([]);
-  const [isCredited, setIsCredited] = useState(false);
+  /* const [isCredited, setIsCredited] = useState(false); */
 
   console.log(setPrograms);
 
@@ -113,9 +113,9 @@ export default function BusinessDashboard() {
               };
             })}
             reloadPage={setReload}
-            isCredited={setIsCredited}
+            /*isCredited={setIsCredited}
             creditState={isCredited}
-            filterUserEmail={filterUserEmail}
+            filterUserEmail={filterUserEmail}*/
           />
         );
       })}
