@@ -12,6 +12,7 @@ export function SearchBar(props) {
         props.filterAPI(event.target.value);
         }}
       />
+
     </div>
   );
 }

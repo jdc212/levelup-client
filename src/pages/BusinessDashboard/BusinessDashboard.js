@@ -11,6 +11,8 @@ export default function BusinessDashboard() {
   const [programs, setPrograms] = useState([]);
   const [users, setUsers] = useState([]);
   const [reload, setReload] = useState(false);
+  const [user, setUser] = useState([]);
+  const [backup, setBackup] = useState([]);
 
   console.log(setPrograms);
 
@@ -33,6 +35,7 @@ export default function BusinessDashboard() {
       try {
         const response2 = await api.get("/user-points/user-points");
         console.log(response2.data);
+        setBackup([...response2.data])
         setUsers([...response2.data.reverse()]);
         setReload(false);
         console.log(users);
@@ -42,6 +45,35 @@ export default function BusinessDashboard() {
     }
     fetchUserPoints();
   }, [reload]);
+
+  function filterUserEmail(searchParams) {
+    if (searchParams === "") {
+      setUser([...backup]);
+      return;
+    }
+
+    const filtered = users.filter((currentUser) => {
+      return (
+        currentUser.customerEmail
+          .toLowerCase()
+          .includes(searchParams.toLowerCase())
+      );
+    });
+
+    setUser(filtered);
+    
+  }
+
+  
+  function refreshPage() {
+     /* window.location.reload(false);*/
+     setReload(true);
+      
+
+    }
+    
+   
+
 
   return (
     <>
@@ -60,7 +92,7 @@ export default function BusinessDashboard() {
           launch={current.launch}
           deadline={current.deadline}
           service={current.service} 
-          
+  
           reloadPage={setReload}
         />
       );
@@ -71,11 +103,11 @@ export default function BusinessDashboard() {
     
       <FormAddUser />
       <FormAddPromo />
-      <SearchBar />
+      <SearchBar placeholder="Search" filterAPI={filterUserEmail} /><button onClick={refreshPage}>Refresh</button>
 
       <h3>Users Points</h3>
 
-      {users.map((current) => {
+      {user.map((current) => {
         return (
           <ClientList
             key={current._id}
