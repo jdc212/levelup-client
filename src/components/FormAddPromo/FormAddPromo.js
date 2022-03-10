@@ -53,6 +53,7 @@ export function FormAddPromo() {
 
         <label htmlFor="launch">Start Date</label>
         <input
+          type="date"
           id="launch"
           name="launch"
           value={form.launch}
@@ -60,6 +61,7 @@ export function FormAddPromo() {
         />
         <label htmlFor="launch">Deadline</label>
         <input
+          type="date"
           id="deadline"
           name="deadline"
           value={form.deadline}
@@ -67,6 +69,7 @@ export function FormAddPromo() {
         />
         <label htmlFor="launch">Service</label>
         <input
+          type="text"
           id="service"
           name="service"
           value={form.service}
