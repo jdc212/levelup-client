@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ClientList } from "../../components/ClientList/ClientList";
 import { FormAddUser } from "../../components/FormAddUser/FormAddUser";
+import { FormAddPromo } from "../../components/FormAddPromo/FormAddPromo";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import api from "../../apis/api";
 
@@ -44,6 +45,7 @@ export default function BusinessDashboard() {
   return (
     <div>
       <FormAddUser />
+      <FormAddPromo />
       <SearchBar />
 
       <h3>Users Points</h3>
