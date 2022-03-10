@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { ClientList } from "../../components/ClientList/ClientList";
 import { FormAddUser } from "../../components/FormAddUser/FormAddUser";
+import { CardPromoList } from "../../components/CardPromoList/CardPromoList";
+import { FormAddPromo} from "../../components/FormAddPromo/FormAddPromo";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import api from "../../apis/api";
 
@@ -42,7 +44,31 @@ export default function BusinessDashboard() {
   }, [reload]);
 
   return (
+    <>
     <div>
+    
+    <FormAddPromo />
+
+    <h3>Card Promo List</h3>
+
+    {programs.map((current) => {
+      return (
+        <CardPromoList
+          key={current._id}
+          id={current._id}
+          creditySystem={current.creditySystem}
+          launch={current.launch}
+          deadline={current.deadline}
+          service={current.service} 
+          
+          reloadPage={setReload}
+        />
+      );
+    })}
+    </div>
+
+    <div>
+    
       <FormAddUser />
       <SearchBar />
 
@@ -66,5 +92,6 @@ export default function BusinessDashboard() {
         );
       })}
     </div>
+    </>
   );
 }
