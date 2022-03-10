@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import styles from "./FormAddUser.module.css";
+import { useState } from "react";
+//import styles from "./FormAddUser.module.css";
 import api from "../../apis/api";
 
 export function FormAddUser() {

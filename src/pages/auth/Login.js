@@ -11,6 +11,7 @@ import toast, { Toaster } from "react-hot-toast";
 function Login(props) {
   const authContext = useContext(AuthContext);
   const [state, setState] = useState({ password: "", email: "" });
+  const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState({
     email: null,
     password: null,
@@ -54,7 +55,6 @@ function Login(props) {
     },
   });
 
-
   return (
     <div className="signin">
       <form onSubmit={formik.handleSubmit}>
@@ -95,10 +95,37 @@ function Login(props) {
                     {formik.errors.password}
                   </div>
                 ) : null}
+            
+            <div>
+              <NewInput
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+              />
+              <label htmlFor="remember-me">
+                Lembrar-me
+              </label>
+            </div>
+            <div>
+              <Link to="/forgot-password">
+                Esqueceu sua senha?
+              </Link>
+            </div>
 
             <div>
-              <Btn type="submit" label="Login"/>
-
+              <Btn
+                label="Login!"
+                disabled={loading}
+                type="submit"
+                    > {loading ? (
+                      <>
+                        <span className="cadastrando"></span>
+                        Cadastrando...
+                      </>
+                    ) : (
+                      "Login!"
+                    )}                  
+              </Btn>
               <Link to="/signup">Don't have an account? Click here to signup!</Link>
             </div>
       </form>

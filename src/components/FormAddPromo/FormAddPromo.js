@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import api from "../../apis/api";
 
 export function FormAddPromo() {
@@ -32,7 +32,7 @@ export function FormAddPromo() {
   async function handleSubmit(event) {
     try {
       await event.preventDefault();
-      await api.post("/my-points/create-points", form);
+      await api.post("/points/create-points", form);
       clearForm();
       navigate("/businessdashboard");
     } catch (error) {
@@ -46,6 +46,7 @@ export function FormAddPromo() {
         <h3>Create Promotion</h3>
         <label htmlFor="creditSystem">Your Credit:</label>
         <select name="creditSystem" id="creditSystem" value={form.creditSystem} onChange={handleChange}>
+          <option ></option>
           <option value="1">1</option>
           <option value="1.5">1.5</option>
           <option value="2">2</option>
