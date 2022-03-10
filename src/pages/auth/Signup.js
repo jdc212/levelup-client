@@ -244,6 +244,20 @@ function Signup(props) {
                     {formik.errors.address}
                   </div>
                 ) : null}
+        
+        <div>
+            <h3>Foto do perfil</h3>
+            <NewInput
+              label=""
+              type="file"
+              name="avatarUrl"
+              id="avatarUrl"
+              onChange={(e) =>
+                formik.setFieldValue("profilePicture", e.target.files[0])
+              }
+            />
+            <span className="file-label">Choose a file…</span>            
+        </div>
 
         <div>
           <Btn
@@ -252,7 +266,7 @@ function Signup(props) {
             type="submit"
                 > {loading ? (
                   <>
-                    <span className="mr-3 animate-spin rounded-full h-5 w-5 border-b-2 border-gray-900"></span>
+                    <span className="cadastrando"></span>
                     Cadastrando...
                   </>
                 ) : (
