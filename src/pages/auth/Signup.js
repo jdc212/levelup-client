@@ -244,6 +244,20 @@ function Signup(props) {
                     {formik.errors.address}
                   </div>
                 ) : null}
+        
+        <div>
+            <h3>Foto do perfil</h3>
+            <NewInput
+              label=""
+              type="file"
+              name="avatarUrl"
+              id="avatarUrl"
+              onChange={(e) =>
+                formik.setFieldValue("profilePicture", e.target.files[0])
+              }
+            />
+            <span className="file-label">Choose a file…</span>            
+        </div>
 
         <div>
           <Btn
