@@ -20,7 +20,7 @@ export function ClientList(props) {
         credit
       );
       console.log(response.data);
-      props.reloadPage(true);
+      props.reloadPage(true);/*precisava fazer um fetch do usuario (pontos)*/
     } catch (error) {
       console.log(error);
     }
