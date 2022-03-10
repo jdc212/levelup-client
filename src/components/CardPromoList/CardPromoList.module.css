@@ -1,0 +1,22 @@
+.cardPromoList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.creditAndCompensate{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+form{
+    padding: 0 40px 0 40px;
+}
+
+.compensateOrganizer{
+    display: flex;
+    flex-direction: column;
+}
