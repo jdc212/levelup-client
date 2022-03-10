@@ -8,6 +8,7 @@ import BusinessDashboard from "./pages/BusinessDashboard/BusinessDashboard";
 import { AuthContextComponent } from "./contexts/authContext";
 import { NavBar } from "./components/NavBar/NavBar";
 import BusinessProfileInfo from "./components/BusinessProfileInfo/BusinessProfileInfo";
+import ForgotPassword from "./pages/auth/ForgotPassword";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/businessprofileinfo" element={<BusinessProfileInfo />} />
         <Route path="/businessdashboard" element={<BusinessDashboard />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         
       </Routes>
     </AuthContextComponent>
