@@ -11,7 +11,7 @@ export default function EditBusinessProfile() {
     CNPJ: "",
     email: "",
     phone: "",
-   /* address: { street:"", number:0, neighborhood: "", city: "", state: "", zipcode: ""},*/
+   address: { street:"", number:0, neighborhood: "", city: "", state: "", zipcode: ""},
     /*img: "",*/
   });
 
