@@ -21,9 +21,9 @@ function Login(props) {
 
   const validation = {
     email: Yup.string()
-      .email("E-mail inválido.")
-      .required("Os campos são obrigatórios."),
-    password: Yup.string().required("Os campos são obrigatórios."),
+      .email("Invalid email.")
+      .required("Fields are required."),
+    password: Yup.string().required("Fields are required."),
   };
 
   const formik = useFormik({
@@ -48,7 +48,7 @@ function Login(props) {
         } catch (err) {
           console.error(err.response);
           setErrors({ ...err.response.data.errors });
-          toast.error("Usuário ou senha incorreto");
+          toast.error("Incorrect username or password");
         }
       }
       login();
@@ -103,12 +103,12 @@ function Login(props) {
                 type="checkbox"
               />
               <label htmlFor="remember-me">
-                Lembrar-me
+                Remind me
               </label>
             </div>
             <div>
               <Link to="/forgot-password">
-                Esqueceu sua senha?
+                Forgot your password?
               </Link>
             </div>
 
@@ -120,7 +120,7 @@ function Login(props) {
                     > {loading ? (
                       <>
                         <span className="cadastrando"></span>
-                        Cadastrando...
+                        Signing up...
                       </>
                     ) : (
                       "Login!"
