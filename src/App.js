@@ -6,6 +6,7 @@ import Login from "./pages/auth/Login";
 import BusinessDashboard from "./pages/BusinessDashboard/BusinessDashboard";
 import { AuthContextComponent } from "./contexts/authContext";
 import { NavBar } from "./components/NavBar/NavBar";
+import { Footer } from "./components/Footer/Footer";
 import BusinessProfileInfo from "./components/BusinessProfileInfo/BusinessProfileInfo";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import NewPassword from "./pages/recoveryPassword/NewPassword";
@@ -23,10 +24,11 @@ function App() {
         <Route path="/businessprofileinfo" element={<BusinessProfileInfo />} />
         <Route path="/businessdashboard" element={<BusinessDashboard />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/newpassword" element={<NewPassword />} />
+        <Route path="/new-password/:token" element={<NewPassword />} />
         <Route path="/compensation" element={<CompensationRules />} />
         
       </Routes>
+      <Footer />
     </AuthContextComponent>
   );
 }

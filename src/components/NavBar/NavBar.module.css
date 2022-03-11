@@ -1,0 +1,32 @@
+.topbar {
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #fadf58;
+  text-align: center;
+
+}
+
+.firstline{
+    display:flex;
+    justify-content: space-between
+}
+
+.pages{
+    display:flex;
+    flex: row;
+
+}
+
+.textnavbar{
+    padding: 10px;
+    text-decoration: none;  
+    color: black;
+}   
+
+.linkto{
+    text-decoration: none;  
+}
+
