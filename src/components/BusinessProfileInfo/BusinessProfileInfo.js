@@ -103,7 +103,6 @@ export default function EditBusinessProfile() {
           />
           <label htmlFor="address">Address</label>
           <input
-            maxlength="128"
             id="address"
             placeholder="Enter full address"
             name="address"
