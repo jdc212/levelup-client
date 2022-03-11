@@ -8,34 +8,56 @@ function Home() {
     <div>
       {/*imageHero*/}
       <section>
-        <div className={styles.heroimage}>
-          <div className={styles.herotext}>
-            <h1>Improve customer retention and trust</h1>
-            <p>Reward your customers with personalized incentives and experiences that best reflect their interactions with your brand.</p>
+        <div className={styles.sectionhero}>
+          <div>
+            <h1>Level Up</h1>
+            <p className={styles.textImageHero}>
+            Transform your business into an experience
+            </p>
           </div>
         </div>
       </section>
 
-      <section className={styles.section2}>
-        <h1>Create the most powerful fidelity program to your business</h1>
-        <div className={styles.subsection2}>
-          <div className={styles.topicssection2}>
-            <h3>Data-driven promotions</h3>
-            <p>Sync all your data in real-time to personalize your promotions and boost your performance.</p>
+      <section className={styles.sectionfaq}>
+        <div className={styles.containerfull}>
+          <div className={styles.faqtitlebox}>
+            <div className={styles.wcontainer}>
+              <h2 className={styles.title}>
+                Create the most powerful <br></br>fidelity program to your business
+              </h2>
+            
+            <div className={styles.faqbox}>
+                <div className={styles.faqitem}>
+                  <h3 className={styles.faqitemtrigger}>
+                    Data-driven promotions
+                  </h3>
+                  <p className={styles.faqitemcontentinner}>
+                    Sync all your data in real-time to personalize your
+                    promotions and boost your performance.
+                  </p>
+                </div>
+                <div className={styles.faqitem}>
+                  <h3 className={styles.faqitemtrigger}>One single UI</h3>
+                  <p className={styles.faqitemcontentinner}>
+                    In the Campaign Manager marketers can create sophisticated
+                    promotions without blocking developers.
+                  </p>
+                </div>
+                <div className={styles.faqitem}>
+                  <h3 className={styles.faqitemtrigger}>
+                    Cloud native and extendable
+                  </h3>
+                  <p className={styles.faqitemcontentinner}>
+                    Talon.One is endlessly scalable. Connect your customer data,
+                    integrate with any 3rd parties and optimize on the fly.
+                  </p>
+                </div>
+            </div>
+
+            <Link className={styles.signupbutton} to="/signup">Signup here!</Link>
           </div>
-          <div>
-            <h3>One single UI</h3>
-            <p>In the Campaign Manager marketers can create sophisticated promotions without blocking developers.</p>
-          </div>  
-          <div>
-            <h3>Cloud native and extendable</h3>
-            <p>Talon.One is endlessly scalable. Connect your customer data, integrate with any 3rd parties and optimize on the fly.</p>
           </div>
         </div>
-
-        <Link to="/signup">
-          Signup here!
-        </Link>
       </section>
     </div>
   );

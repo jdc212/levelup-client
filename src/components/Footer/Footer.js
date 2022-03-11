@@ -1,20 +1,44 @@
-import styles from './Footer.module.css';
+import styles from "./Footer.module.css";
 
-export function Footer(){
-    return(
-    <div className={styles.footer}>
-        <img src="/"/>
-        <section>
-            <h3>Institutional</h3>
-            <a href="/">About us</a>
-            <a href="/">LevelUp for business</a>
-            {/*<a href="/">LevelUp for users</a>*/}           
-        </section>
-        <section>
-            <h3>Restricted Area</h3>
-            <a href="/">Business Profile</a>
-            {/*<a href="/">User Profile</a>*/}           
-        </section>
+export function Footer() {
+  return (
+    <div className={styles.sectionfooter}>
+      <div className={styles.containerfull}>
+        <div className={styles.wcontainer}>
+          <div className={styles.footerwrapper}>
+            <div className={styles.footerleft}>
+              <h1 className={styles.footertitle}>
+                Join the loyalty revolution
+              </h1>
+
+              <div className={styles.footerlink}>
+                <div className={styles.titlesubtext}>
+                  <a className={styles.adjustext} href="/business">
+                    Business
+                  </a>
+                  <a className={styles.adjustext} href="/clients">
+                    Clients
+                  </a>
+                  <a className={styles.adjustext} href="/business">
+                    Corporate
+                  </a>
+                  <a className={styles.adjustext} href="/signup">
+                    Signup
+                  </a>
+                </div>
+              </div>
+              </div>
+              <div className={styles.footerright}>
+                <div className={styles.footerimg1}>
+                <h4 className={styles.teste}>
+                Level Up 
+                </h4>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      </div>
     </div>
-    )
+  );
 }
