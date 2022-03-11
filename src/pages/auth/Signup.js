@@ -22,7 +22,7 @@ function Signup(props) {
 
       let response = "";
 
-      response = await api.post("/business/upload", uploadData);
+      response = await api.post("/upload", uploadData);
 
       return response.data.url;
     } catch (err) {
