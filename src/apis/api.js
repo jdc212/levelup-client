@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apis = {
   development: "http://localhost:4000/api",
-  production: "https://leveluployalty.herokuapp.com/api",
+  production: "https://levelup-backend-production.herokuapp.com/api",
 };
 
 // Pré-configurando a URL padrão do nosso backend em uma instância do Axios
