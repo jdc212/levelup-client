@@ -22,7 +22,7 @@ function Signup(props) {
 
       let response = "";
 
-      response = await api.post("/business/upload", uploadData);
+      response = await api.post("/upload", uploadData);
 
       return response.data.url;
     } catch (err) {
@@ -245,7 +245,7 @@ function Signup(props) {
                   </div>
                 ) : null}
         
-        <div>
+        {/* <div>
             <h3>Foto do perfil</h3>
             <NewInput
               label=""
@@ -257,7 +257,7 @@ function Signup(props) {
               }
             />
             <span className="file-label">Choose a file…</span>            
-        </div>
+        </div> */}
 
         <div>
           <Btn
