@@ -1,4 +1,3 @@
-@media screen and (min-width: 1200px) {
     .divPage {
       display: flex;
       align-items: flex-start;
@@ -9,7 +8,7 @@
       width: 40%;
     }
     .form {
-      width: 1500px;
+      width: 1200px;
       background-color: #debebf;
       padding: 20px;
       display: flex;
@@ -58,4 +57,3 @@
     }
     
     
-} 
