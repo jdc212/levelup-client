@@ -11,7 +11,7 @@ function Corporate() {
         <div className={styles.heroimage}>
           <div className={styles.herotext}>
             <h1>WELCOME TO LEVEL UP</h1>
-            <p>Level UP is the loyalty program and strategic technology partner empowering retailers to improve their performance and offer their shoppers an unique experience, through reward program solutions, and complementary marketing services.</p>
+            <p>Level Up is a loyalty program provider and a strategic technology partner that empowers retailers to improve their performance and offer their shoppers an unique experience, through reward program solutions, and complementary marketing services.</p>
           </div>
         </div>
       </section>
