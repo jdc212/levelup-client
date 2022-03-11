@@ -66,14 +66,12 @@ export default function BusinessDashboard() {
       <div>
         <FormAddPromo />
 
-        <h3>Card Promo List</h3>
-
         {programs.map((current) => {
           return (
             <CardPromoList
               key={current._id}
               id={current._id}
-              creditySystem={current.creditySystem}
+              creditSystem={current.creditSystem}
               launch={current.launch}
               deadline={current.deadline}
               service={current.service}

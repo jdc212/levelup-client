@@ -7,7 +7,7 @@ export function NavBar() {
             <div >
                 <div className={styles.firstline}>
                 <div className={styles.pages}>
-                    <Link to="/business" className={styles.linkto}>
+                    <Link to="/" className={styles.linkto}>
                         <div className="navBar-icon">
                             <span className={styles.textnavbar}>Business</span>
                         </div>

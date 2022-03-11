@@ -6,6 +6,7 @@ import NewInput from "./NewInput";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
+import styles from "./Signup.module.css";
 
 
 function Signup(props) {
@@ -14,7 +15,7 @@ function Signup(props) {
 
   const navigate = useNavigate();
 
-  {/*async function handleAvatarUpload(file) {
+  /*async function handleAvatarUpload(file) {
     try {
       const uploadData = new FormData();
 
@@ -28,7 +29,7 @@ function Signup(props) {
     } catch (err) {
       console.error(err);
     }
-  }*/}
+  }*/
 
   const initialValues = {
       name: "",
@@ -72,9 +73,9 @@ function Signup(props) {
           return;
         }
 
-        {/*if (values.profilePicture) {
+        /*if (values.profilePicture) {
           values.profileAvatarUrl = await handleAvatarUpload(values.profilePicture);
-        }*/}
+        }*/
 
         try {
           await api.post("/business/signup", values);
@@ -91,214 +92,219 @@ function Signup(props) {
   });
 
   return (
-    <div className="signup">
-      <form onSubmit={formik.handleSubmit}>
-        <h1>Signup!</h1>
+    <div className={styles.divPage}>
+      <div className="signup">
+        <form onSubmit={formik.handleSubmit}>
+          <div className={styles.form}>
+            <h2 className={styles.title}>Sign up!</h2>
 
-        <div>
-          <h2>Name</h2>
-          <NewInput
-            type="text"
-            label="Name"
-            id="signupFormName"
-            name="name"
-            onChange={formik.handleChange}
-            value={formik.values.name}
-            required={true}
-            error={formik.errors.name}
-          />
-        </div>
-        {(formik.touched.name && formik.errors.name) ?
-                (<div>
-                    {formik.errors.name}
-                  </div>
-                ) : null}
+            <div>
+              <h2>Name</h2>
+              <NewInput
+                type="text"
+                label="Name"
+                id="signupFormName"
+                name="name"
+                onChange={formik.handleChange}
+                value={formik.values.name}
+                required={true}
+                error={formik.errors.name}
+              />
+            </div>
+            {(formik.touched.name && formik.errors.name) ?
+                    (<div>
+                        {formik.errors.name}
+                      </div>
+                    ) : null}
 
-        <div>
-          <h2>Nome da Empresa</h2>
-          <NewInput
-            label="Dba"
-            id="signupFormDba"
-            name="dba"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.dba}
-            required={true}
-            type="text"
-            error={formik.errors.dba}
-          />
-        </div>
-        {(formik.touched.dba && formik.errors.dba) ?
-                (<div>
-                    {formik.errors.dba}
-                  </div>
-                ) : null}
+            <div>
+              <h2>Nome da Empresa</h2>
+              <NewInput
+                label="Dba"
+                id="signupFormDba"
+                name="dba"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.dba}
+                required={true}
+                type="text"
+                error={formik.errors.dba}
+              />
+            </div>
+            {(formik.touched.dba && formik.errors.dba) ?
+                    (<div>
+                        {formik.errors.dba}
+                      </div>
+                    ) : null}
 
-        <div>
-          <h2>E-mail Address</h2>
-          <NewInput
-            type="email"
-            label="E-mail"
-            id="signupFormEmail"
-            name="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            required={true}
-            error={formik.errors.email}
-          />
-        </div>
-        {(formik.touched.email && formik.errors.email) ?
-                (<div>
-                    {formik.errors.email}
-                  </div>
-                ) : null}
+            <div>
+              <h2>E-mail Address</h2>
+              <NewInput
+                type="email"
+                label="E-mail"
+                id="signupFormEmail"
+                name="email"
+                onChange={formik.handleChange}
+                value={formik.values.email}
+                required={true}
+                error={formik.errors.email}
+              />
+            </div>
+            {(formik.touched.email && formik.errors.email) ?
+                    (<div>
+                        {formik.errors.email}
+                      </div>
+                    ) : null}
 
-        <div>
-          <h2>Password</h2>
-          <NewInput
-            type="password"
-            label="Senha"
-            id="signUpPassword"
-            required={true}
-            name="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            error={formik.errors.password}
-          />
-        </div>
-        {(formik.touched.password && formik.errors.password) ?
-                (<div>
-                    {formik.errors.password}
-                  </div>
-                ) : null}
+            <div>
+              <h2>Password</h2>
+              <NewInput
+                type="password"
+                label="Senha"
+                id="signUpPassword"
+                required={true}
+                name="password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+                error={formik.errors.password}
+              />
+            </div>
+            {(formik.touched.password && formik.errors.password) ?
+                    (<div>
+                        {formik.errors.password}
+                      </div>
+                    ) : null}
 
-        <div>
-          <h2>Confirmação de senha</h2>
-          <NewInput
-            type="password"
-            label="Confirmação de senha"
-            id="signUpConfirmPassword"
-            required={true}
-            name="confirmPassword"
-            onChange={formik.handleChange}
-            value={formik.values.confirmPassword}
-            error={formik.errors.password}
-          />
-        </div>
+            <div>
+              <h2>Confirmação de senha</h2>
+              <NewInput
+                type="password"
+                label="Confirmação de senha"
+                id="signUpConfirmPassword"
+                required={true}
+                name="confirmPassword"
+                onChange={formik.handleChange}
+                value={formik.values.confirmPassword}
+                error={formik.errors.password}
+              />
+            </div>
 
-        <div>
-          <h2>CNPJ</h2>
-          <NewInput
-            type="number"
-            label="CNPJ"
-            id="signUpConfirmCNPJ"
-            required={true}
-            name="CNPJ"
-            onChange={formik.handleChange}
-            value={formik.values.CNPJ}
-            error={formik.errors.CNPJ}
-          />
-        </div>
+            <div>
+              <h2>CNPJ</h2>
+              <NewInput
+                type="number"
+                label="CNPJ"
+                id="signUpConfirmCNPJ"
+                required={true}
+                name="CNPJ"
+                onChange={formik.handleChange}
+                value={formik.values.CNPJ}
+                error={formik.errors.CNPJ}
+              />
+            </div>
 
-        {(formik.touched.CNPJ && formik.errors.CNPJ) ?
-                (<div>
-                    {formik.errors.CNPJ}
-                  </div>
-                ) : null}
+            {(formik.touched.CNPJ && formik.errors.CNPJ) ?
+                    (<div>
+                        {formik.errors.CNPJ}
+                      </div>
+                    ) : null}
 
-        <div>
-          <h2>Telefone</h2>
-          <NewInput
-            type="number"
-            label="Telefone"
-            id="signUpConfirmPhone"
-            required={true}
-            name="phone"
-            onChange={formik.handleChange}
-            value={formik.values.phone}
-            error={formik.errors.phone}
-          />
-        </div>
-        
-        {(formik.touched.phone && formik.errors.phone) ?
-                (<div>
-                    {formik.errors.name}
-                  </div>
-                ) : null}
+            <div>
+              <h2>Telefone</h2>
+              <NewInput
+                type="number"
+                label="Telefone"
+                id="signUpConfirmPhone"
+                required={true}
+                name="phone"
+                onChange={formik.handleChange}
+                value={formik.values.phone}
+                error={formik.errors.phone}
+              />
+            </div>
+            
+            {(formik.touched.phone && formik.errors.phone) ?
+                    (<div>
+                        {formik.errors.name}
+                      </div>
+                    ) : null}
 
-        <div>
-          <h2>Endereço</h2>
-          <NewInput
-            type="text"
-            label="Endereço"
-            id="signUpConfirmAddress"
-            required={true}
-            name="address"
-            onChange={formik.handleChange}
-            value={formik.values.address}
-            error={formik.errors.address}
-          />
-        </div>
-        {(formik.touched.address && formik.errors.address) ?
-                (<div>
-                    {formik.errors.address}
-                  </div>
-                ) : null}
-        
-        {/* <div>
-            <h3>Foto do perfil</h3>
-            <NewInput
-              label=""
-              type="file"
-              name="avatarUrl"
-              id="avatarUrl"
-              onChange={(e) =>
-                formik.setFieldValue("profilePicture", e.target.files[0])
-              }
-            />
-            <span className="file-label">Choose a file…</span>            
-        </div> */}
+            <div>
+              <h2>Endereço</h2>
+              <NewInput
+                type="text"
+                label="Endereço"
+                id="signUpConfirmAddress"
+                required={true}
+                name="address"
+                onChange={formik.handleChange}
+                value={formik.values.address}
+                error={formik.errors.address}
+              />
+            </div>
+            {(formik.touched.address && formik.errors.address) ?
+                    (<div>
+                        {formik.errors.address}
+                      </div>
+                    ) : null}
+            
+            {/* <div>
+                <h3>Foto do perfil</h3>
+                <NewInput
+                  label=""
+                  type="file"
+                  name="avatarUrl"
+                  id="avatarUrl"
+                  onChange={(e) =>
+                    formik.setFieldValue("profilePicture", e.target.files[0])
+                  }
+                />
+                <span className="file-label">Choose a file…</span>            
+            </div> */}
 
-        <div>
-          <Btn
-            label="Sign up!"
-            disabled={loading}
-            type="submit"
-                > {loading ? (
-                  <>
-                    <span className="cadastrando"></span>
-                    Cadastrando...
-                  </>
-                ) : (
-                  "Signup!"
-                )}                  
-          </Btn>
-          <Link to="/login">Already have an account? Click here to login.</Link>
-        </div>
-      </form>
-      <Toaster
-          position="top-center"
-          reverseOrder={false}
-          gutter={8}
-          containerClassName=""
-          containerStyle={{}}
-          toastOptions={{
-            className: "",
-            duration: 5000,
-            style: {
-              background: "#fff",
-              color: "#000",
-            },
+            <div>
+              <Btn
+                label="Sign up!"
+                disabled={loading}
+                type="submit"
+                    > {loading ? (
+                      <>
+                        <span className="cadastrando"></span>
+                        Cadastrando...
+                      </>
+                    ) : (
+                      "Signup!"
+                    )}                  
+              </Btn>
+              <Link to="/login">Already have an account? Click here to login.</Link>
+            </div>
+          </div>
+        </form>
 
-            success: {
-              duration: 3000,
-              theme: {
-                primary: "green",
-                secondary: "black",
+        <Toaster
+            position="top-center"
+            reverseOrder={false}
+            gutter={8}
+            containerClassName=""
+            containerStyle={{}}
+            toastOptions={{
+              className: "",
+              duration: 5000,
+              style: {
+                background: "#fff",
+                color: "#000",
               },
-            },
-          }}
-        />
+
+              success: {
+                duration: 3000,
+                theme: {
+                  primary: "green",
+                  secondary: "black",
+                },
+              },
+            }}
+          />
+      </div>
     </div>
   );
 }
