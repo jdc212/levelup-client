@@ -7,7 +7,7 @@ export function NavBar() {
             <div >
                 <div className={styles.firstline}>
                 <div className={styles.pages}>
-                    <Link to="/" className={styles.linkto}>
+                    <Link to="/business" className={styles.linkto}>
                         <div className="navBar-icon">
                             <span className={styles.textnavbar}>Business</span>
                         </div>
@@ -24,10 +24,15 @@ export function NavBar() {
                         
                     </Link>
                 </div>
-                <div className={styles.login}>
+                <div className={styles.pages}>
                     <Link to="/login" className={styles.linkto}>
                         <div className="navBar-icon">
                             <span className={styles.textnavbar}>Login</span>
+                        </div>
+                    </Link>
+                    <Link to="/businessprofileinfo" className={styles.linkto}>
+                        <div className="navBar-icon">
+                            <span className={styles.textnavbar}>Business Profile</span>
                         </div>
                     </Link>
                 </div>
