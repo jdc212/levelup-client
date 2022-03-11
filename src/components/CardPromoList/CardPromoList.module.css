@@ -1,22 +1,57 @@
-.cardPromoList{
+.clientList{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    font-family: Poppins, sans-serif;
+    padding: 20px;
 }
 
-.creditAndCompensate{
+  
+.faqitem {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 1500px;
+    
+}
+
+h4{
+    padding-left: 30px;
+}
+p{
+    padding-left: 30px;
+}
+
+.faqbox {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-family: Poppins, sans-serif;
+    
 }
 
-form{
-    padding: 0 40px 0 40px;
+.sectionfaq {
+    padding-bottom: 10px;
+    border-left: 40px solid #fff;
+    border-right: 40px solid #fff;
+    background-color: #debebf;
+    font-family: Poppins, sans-serif;
 }
 
-.compensateOrganizer{
+.title {
+    color: #0c2638;
+    margin-top: 0px;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-left: 50px;
     display: flex;
-    flex-direction: column;
+  
+    align-items: left;
 }
+
+
+

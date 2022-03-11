@@ -56,8 +56,8 @@ export default function EditBusinessProfile() {
     <div className={styles.divPage}>
       <form onSubmit={handleSubmit}>
         <div className={styles.form}>
-          <h2 className={styles.title}>Profile:</h2>
-          <label htmlFor="name">Business name:</label>
+          <h2 className={styles.title}>Business Profile</h2>
+          <label htmlFor="name">Business name</label>
           <input
             id="name"
             placeholder="Company Name"
@@ -65,7 +65,7 @@ export default function EditBusinessProfile() {
             value={form.name}
             onChange={handleChange}
           />
-          <label htmlFor="dba">Doing business as</label>
+          <label htmlFor="dba">Doing Business As</label>
           <input
             id="dba"
             placeholder="DBA"
