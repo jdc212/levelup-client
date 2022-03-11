@@ -1,5 +1,8 @@
 # Level Up
 
+![Level Up logo](https://github.com/BrunoFilippini/projetct2-gigland/blob/main/src/assets/giglandlogo.png)
+<br>
+
 *Level Up* is a loyalty program platform that offers retailers the chance to improve their performance and by creating their own exclusive and unique reward programs to reach their target audience and please their customers and shoppers.
 
 
