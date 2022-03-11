@@ -14,7 +14,7 @@ function Signup(props) {
 
   const navigate = useNavigate();
 
-  async function handleAvatarUpload(file) {
+  {/*async function handleAvatarUpload(file) {
     try {
       const uploadData = new FormData();
 
@@ -28,7 +28,7 @@ function Signup(props) {
     } catch (err) {
       console.error(err);
     }
-  }
+  }*/}
 
   const initialValues = {
       name: "",
@@ -72,9 +72,9 @@ function Signup(props) {
           return;
         }
 
-        if (values.profilePicture) {
+        {/*if (values.profilePicture) {
           values.profileAvatarUrl = await handleAvatarUpload(values.profilePicture);
-        }
+        }*/}
 
         try {
           await api.post("/business/signup", values);
