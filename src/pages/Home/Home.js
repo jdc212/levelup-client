@@ -11,8 +11,8 @@ function Home() {
       <section>
         <div className={styles.sectionhero}>
           <div>
-          hu
-         <p className={styles.textImageHero}>
+            <img className={styles.logo} src={logo} />
+            <p className={styles.textImageHero}>
             Transform your business into an experience
             </p>
             
@@ -27,7 +27,6 @@ function Home() {
               <h2 className={styles.title}>
                 Create the most powerful <br></br>fidelity program to your business
               </h2>
-            
             <div className={styles.faqbox}>
                 <div className={styles.faqitem}>
                   <h3 className={styles.faqitemtrigger}>

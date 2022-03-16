@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-//import styles from "./FormAddUser.module.css";
+import styles from "./FormAddUser.module.css";
 import api from "../../apis/api";
 
 export function FormAddUser() {
@@ -37,25 +37,35 @@ export function FormAddUser() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <h3>Create User Points</h3>
-        <label htmlFor="customerEmail">User Email</label>
-        <input
-          id="customerEmail"
-          name="customerEmail"
-          value={form.customerEmail}
-          onChange={handleChange}
-        />
-        <label htmlFor="pointsAccumulated">Points to be Credit</label>
-        <input
-          id="pointsAccumulated"
-          name="pointsAccumulated"
-          value={form.pointsAccumulated}
-          onChange={handleChange}
-        />
+      <div className={styles.sectionfaq}>
+        <form onSubmit={handleSubmit}>
+          <h3 className={styles.title}>Create User Points</h3>
+          <div className={styles.faqbox}>
+            <div className={styles.faqitem}>
+            <div className={styles.clientList}>
+              <label htmlFor="customerEmail">User Email</label>
+              <input
+                id="customerEmail"
+                name="customerEmail"
+                value={form.customerEmail}
+                onChange={handleChange}
+                className={styles.inputuser}
+              />
+              <label htmlFor="pointsAccumulated">Points to be Credit</label>
+              <input
+                id="pointsAccumulated"
+                name="pointsAccumulated"
+                value={form.pointsAccumulated}
+                className={styles.inputuser}
+                onChange={handleChange}
+              />
 
-        <button type="submit">Create</button>
-      </form>
+              <button type="submit" className={styles.signupbutton}>Create</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Btn from "./Btn";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
+import styles from "./Login.module.css"
 
 function Login(props) {
   const authContext = useContext(AuthContext);
@@ -56,15 +57,15 @@ function Login(props) {
   });
 
   return (
-    <div className="signin">
+    <div className={styles.divPage}>
       <form onSubmit={formik.handleSubmit}>
-            <h1>Login</h1>
+      <div className={styles.form}>
+            <h1 className={styles.title}>Login</h1>
             <div>
               <h2>E-mail Address</h2>
               <NewInput
                 type="email"
                 name="email"
-                label="e-mail"
                 id="signupFormEmail"
                 value={formik.values.email}
                 error={formik.errors.email}
@@ -82,7 +83,6 @@ function Login(props) {
               <NewInput
                 type="password"
                 name="password"
-                label="password"
                 id="signupFormPassword"
                 value={formik.values.password}
                 error={formik.errors.password}
@@ -106,11 +106,7 @@ function Login(props) {
                 Remind me
               </label>
             </div>
-            <div>
-              <Link to="/forgot-password">
-                Forgot your password?
-              </Link>
-            </div>
+
 
             <div>
               <Btn
@@ -127,6 +123,12 @@ function Login(props) {
                     )}                  
               </Btn>
               <Link to="/signup">Don't have an account? Click here to signup!</Link>
+              <div>
+              <Link to="/forgot-password">
+                Forgot your password?
+              </Link>
+            </div>
+            </div>
             </div>
       </form>
       <Toaster

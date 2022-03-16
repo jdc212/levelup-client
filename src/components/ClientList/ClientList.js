@@ -2,8 +2,8 @@ import styles from "./ClientList.module.css";
 import api from "../../apis/api";
 import { useState } from "react";
 
-export function ClientList(props) {
 
+export function ClientList(props) {
   const [credit, setCredit] = useState({ points: 0 });
   const [compensate, setCompensate] = useState({ number: 0 });
 
@@ -20,7 +20,7 @@ export function ClientList(props) {
         credit
       );
       console.log(response.data);
-      props.reloadPage(true);/*precisava fazer um fetch do usuario (pontos)*/
+      props.reloadPage(true); /*precisava fazer um fetch do usuario (pontos)*/
     } catch (error) {
       console.log(error);
     }
@@ -46,51 +46,64 @@ export function ClientList(props) {
   }
 
   return (
-    <div className={styles.clientList}>
-      <section>
-        <p>User Email: {props.customerEmail}</p>
-        <p>Points: {props.pointsAccumulated}</p>
-      </section>
+    <div className={styles.sectionfaq}>
+    <h3 className={styles.title}>Users Points</h3>
+      <div className={styles.faqbox}>
+        <div className={styles.faqitem}>
+          <div className={styles.clientList}>
+            <section>
+              <p>User Email: {props.customerEmail}</p>
+              <p>Points: {props.pointsAccumulated}</p>
+            </section>
 
-      <section className={styles.creditAndCompensate}>
-        <form onSubmit={handleSubmitCredit}>
-          <h4>Credit Points</h4>
-          <label htmlFor="credit">Choose Program</label>
-          <select
-            id="credit"
-            name="points"
-            value={credit.points}
-            onChange={handleChangeCredit}
-          ><option value=""></option>
-            {props.services.map((service) => {
-              return (
-                <option
-                  key={service.service}
-                  value={Number(service.creditSystem)}
-                >{`Promotion: ${service.service} 
+            <section className={styles.creditAndCompensate}>
+              <form onSubmit={handleSubmitCredit}>
+                <h4>Credit Points</h4>
+                <label htmlFor="credit">Choose Program</label>
+                <br></br>
+                <select
+                  id="credit"
+                  name="points"
+                  value={credit.points}
+                  onChange={handleChangeCredit}
+                >
+                  <option value=""></option>
+                  {props.services.map((service) => {
+                    return (
+                      <option
+                        key={service.service}
+                        value={Number(service.creditSystem)}
+                      >{`Promotion: ${service.service} 
                    Points to Credit: ${service.creditSystem}`}</option>
-              );
-            })}
-          </select>
+                    );
+                  })}
+                </select>
 
-          <button type="submit">Credit</button>
-        </form>
+                <button type="submit" className={styles.signupbutton}>
+                  Credit
+                </button>
+              </form>
 
-        <form
-          className={styles.compensateOrganizer}
-          onSubmit={handleSubmitCompensate}
-        >
-          <h4>Compensate Points</h4>
-          <label htmlFor="number">Points to Compensate</label>
-          <input
-            id="number"
-            name="number"
-            value={props.number}
-            onChange={handleChangeCompensate}
-          />
-          <button type="submit">Compensate</button>
-        </form>
-      </section>
+              <form
+                className={styles.compensateOrganizer}
+                onSubmit={handleSubmitCompensate}
+              >
+                <h4>Compensate Points</h4>
+                <label htmlFor="number">Points to Compensate</label>
+                <input
+                  id="number"
+                  name="number"
+                  value={props.number}
+                  onChange={handleChangeCompensate}
+                />
+                <button type="submit" className={styles.signupbutton}>
+                  Compensate
+                </button>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
