@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from '../../assets/styles/LevelUpWhite.png'
 
 import styles from "./Home.module.css";
 
@@ -10,10 +11,11 @@ function Home() {
       <section>
         <div className={styles.sectionhero}>
           <div>
-            <h1>Level Up</h1>
-            <p className={styles.textImageHero}>
+          hu
+         <p className={styles.textImageHero}>
             Transform your business into an experience
             </p>
+            
           </div>
         </div>
       </section>
