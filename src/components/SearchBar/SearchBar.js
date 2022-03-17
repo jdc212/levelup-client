@@ -9,7 +9,7 @@ export function SearchBar(props) {
                     <input
                       type="text"
                       area="searchParams"
-                      className="px-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                      className="relative w-full bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       placeholder={props.placeholder}
                       onKeyUp={(event) => {
                         props.filterAPI(event.target.value);

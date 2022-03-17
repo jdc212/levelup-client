@@ -63,9 +63,9 @@ export default function BusinessDashboard() {
 
   return (
     <>
-      <div className="px-4 bg-gray-100">
+      <div className="px-4 bg-gray-50">
         <div className="md:col-span-1">
-          <div className="py-3 sm:px-0">
+          <div className="pt-4 pb-0 sm:px-0">
             <h3 className="text-lg font-medium leading-6 text-gray-900">
               Create Promotion
             </h3>
@@ -90,7 +90,7 @@ export default function BusinessDashboard() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-6">
           {programs.map((current) => {
             return (
               <CardPromoList
@@ -113,7 +113,7 @@ export default function BusinessDashboard() {
         </div>
 
         <div className="md:col-span-1">
-          <div className="pb-2 sm:px-0">
+          <div className="pb-0 sm:px-0">
             <h3 className="text-lg font-medium leading-6 text-gray-900">
               Create Customer Points
             </h3>
