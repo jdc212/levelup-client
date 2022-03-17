@@ -1,18 +1,22 @@
 .clientList{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     font-family: Poppins, sans-serif;
     padding: 20px;
     
 }
 
+.organize{
+  padding: 0px 30px 0px 0px;
+}
+
 .creditAndCompensate{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 form{
