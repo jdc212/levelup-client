@@ -41,7 +41,7 @@ export function FormAddPromo() {
   }
 
   return (
-    <div className="w-1/2">
+    <div className="w-50">
       <form onSubmit={handleSubmit}>
         <div className="shadow overflow-hidden sm:rounded-md">
           <div className="px-4 py-5 bg-white sm:p-6">
@@ -112,7 +112,7 @@ export function FormAddPromo() {
                   htmlFor="launch"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Deadline
+                  End Date
                 </label>
                 <div className="mt-1 w-48 h-5 flex rounded-md shadow-sm">
                   <input
