@@ -1,8 +1,8 @@
 export function CardPromoList(props) {
   return (
     <div className="max-w-sm bg-white overflow-hidden shadow sm:rounded-md">
-      <div className="px-4 py-2 text-white bg-indigo-600 text-center sm:px-6">
-        <h4>{` ${props.service} Promotion`}</h4>
+      <div className="px-4 py-2 align-midle text-white bg-indigo-600 text-center sm:px-6">
+        <h4 className="text-lg">{` ${props.service} Promotion`}</h4>
       </div>
       <div className="py-3">
         <p className="px-3 text-gray-700 text-base">

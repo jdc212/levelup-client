@@ -65,7 +65,7 @@ export default function BusinessDashboard() {
     <>
       <div className="px-4 bg-gray-100">
         <div className="md:col-span-1">
-          <div className="py-4 sm:px-0">
+          <div className="py-3 sm:px-0">
             <h3 className="text-lg font-medium leading-6 text-gray-900">
               Create Promotion
             </h3>
@@ -77,13 +77,13 @@ export default function BusinessDashboard() {
         </div>
 
         <div className="hidden sm:block" aria-hidden="true">
-          <div className="py-5">
+          <div className="py-4">
             <div className="border-t border-gray-200" />
           </div>
         </div>
 
         <div className="md:col-span-1">
-          <div className="pb-4 sm:px-0">
+          <div className="pb-2 sm:px-0">
             <h3 className="text-lg font-medium leading-6 text-gray-900">
               Registered Promotions
             </h3>
@@ -107,13 +107,13 @@ export default function BusinessDashboard() {
         </div>
 
         <div className="hidden sm:block" aria-hidden="true">
-          <div className="py-5">
+          <div className="py-4">
             <div className="border-t border-gray-200" />
           </div>
         </div>
 
         <div className="md:col-span-1">
-          <div className="pb-4 sm:px-0">
+          <div className="pb-2 sm:px-0">
             <h3 className="text-lg font-medium leading-6 text-gray-900">
               Create User Points
             </h3>
@@ -126,13 +126,13 @@ export default function BusinessDashboard() {
           </div>
 
           <div className="hidden sm:block" aria-hidden="true">
-            <div className="py-5">
+            <div className="py-4">
               <div className="border-t border-gray-200" />
             </div>
           </div>
 
           <div className="md:col-span-1">
-            <div className="pb-4 sm:px-0">
+            <div className="pb-2 sm:px-0">
               <h3 className="text-lg font-medium leading-6 text-gray-900">
                 Search User Points
               </h3>
