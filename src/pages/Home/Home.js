@@ -11,10 +11,11 @@ function Home() {
       <section>
         <div className={styles.sectionhero}>
           <div>
-            <img className={styles.logo} src={logo} />
-            <p className={styles.textImageHero}>
+            <img class="object-contain hover:object-scale-down" src={logo} />
+            <p className="text-blue-500 text-2xl">
             Transform your business into an experience
             </p>
+            
           </div>
         </div>
       </section>
