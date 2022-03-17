@@ -1,4 +1,3 @@
-import styles from "./ClientList.module.css";
 import api from "../../apis/api";
 import { useState } from "react";
 
@@ -46,18 +45,19 @@ export function ClientList(props) {
   }
 
   return (
-    <div className={styles.sectionfaq}>
-    <h3 className={styles.title}>Users Points</h3>
-      <div className={styles.faqbox}>
-        <div className={styles.faqitem}>
-          <div className={styles.clientList}>
+    <div className="max-w-sm bg-white overflow-hidden shadow sm:rounded-md">
+      <div className="block text-sm font-medium text-gray-700">
+        <h4 className="">Customer Points</h4>
+        <div className="">
+        <div className="">
+          <div className="mt-1 w-130 flex rounded-md shadow-sm">
             <section>
-              <p>User Email: {props.customerEmail}</p>
-              <p>Points: {props.pointsAccumulated}</p>
+              <p className="mt-1 flex rounded-md shadow-sm">Customer Email: {props.customerEmail}</p>
+              <p className="mt-1 flex rounded-md shadow-sm">Points: {props.pointsAccumulated}</p>
             </section>
 
-            <section className={styles.creditAndCompensate}>
-              <form onSubmit={handleSubmitCredit}>
+            <section className="">
+              <form onSubmit={handleSubmitCredit} className="block text-sm font-medium text-gray-700">
                 <h4>Credit Points</h4>
                 <label htmlFor="credit">Choose Program</label>
                 <br></br>
@@ -79,24 +79,29 @@ export function ClientList(props) {
                   })}
                 </select>
 
-                <button type="submit" className={styles.signupbutton}>
+                <button 
+                type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
                   Credit
                 </button>
               </form>
 
               <form
-                className={styles.compensateOrganizer}
+                className="block text-sm font-medium text-gray-700"
                 onSubmit={handleSubmitCompensate}
               >
                 <h4>Compensate Points</h4>
-                <label htmlFor="number">Points to Compensate</label>
+                <label htmlFor="number" className="block text-sm font-medium text-gray-700">Points to Compensate</label>
                 <input
                   id="number"
                   name="number"
                   value={props.number}
                   onChange={handleChangeCompensate}
                 />
-                <button type="submit" className={styles.signupbutton}>
+                <button 
+                type="submit" 
+                className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
                   Compensate
                 </button>
               </form>
@@ -104,6 +109,7 @@ export function ClientList(props) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

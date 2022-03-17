@@ -63,50 +63,105 @@ export default function BusinessDashboard() {
 
   return (
     <>
-      <div>
+      <div className="px-4 bg-gray-100">
+        <div className="md:col-span-1">
+          <div className="py-3 sm:px-0">
+            <h3 className="text-lg font-medium leading-6 text-gray-900">
+              Create Promotion
+            </h3>
+          </div>
+        </div>
 
-      
-        <FormAddPromo />
+        <div className="flex justify-center">
+          <FormAddPromo />
+        </div>
 
-        {programs.map((current) => {
-          return (
-            <CardPromoList
-              key={current._id}
-              id={current._id}
-              creditSystem={current.creditSystem}
-              launch={current.launch}
-              deadline={current.deadline}
-              service={current.service}
-              reloadPage={setReload}
-            />
-          );
-        })}
-      </div>
+        <div className="hidden sm:block" aria-hidden="true">
+          <div className="py-4">
+            <div className="border-t border-gray-200" />
+          </div>
+        </div>
 
-      <div>
-        <FormAddUser />
-        <SearchBar placeholder="Search" filterAPI={filterUserEmail} />
+        <div className="md:col-span-1">
+          <div className="pb-2 sm:px-0">
+            <h3 className="text-lg font-medium leading-6 text-gray-900">
+              Registered Promotions
+            </h3>
+          </div>
+        </div>
 
-        {user.map((current) => {
-          return (
-            <ClientList
-              key={current._id}
-              id={current._id}
-              customerEmail={current.customerEmail}
-              pointsAccumulated={current.pointsAccumulated}
-              services={programs.map((program) => {
-                return {
-                  service: program.service,
-                  creditSystem: program.creditSystem,
-                };
-              })}
-              reloadPage={setReload}
-              /*isCredited={setIsCredited}
+        <div className="grid grid-cols-3 gap-3">
+          {programs.map((current) => {
+            return (
+              <CardPromoList
+                key={current._id}
+                id={current._id}
+                creditSystem={current.creditSystem}
+                launch={current.launch}
+                deadline={current.deadline}
+                service={current.service}
+                reloadPage={setReload}
+              />
+            );
+          })}
+        </div>
+
+        <div className="hidden sm:block" aria-hidden="true">
+          <div className="py-4">
+            <div className="border-t border-gray-200" />
+          </div>
+        </div>
+
+        <div className="md:col-span-1">
+          <div className="pb-2 sm:px-0">
+            <h3 className="text-lg font-medium leading-6 text-gray-900">
+              Create Customer Points
+            </h3>
+          </div>
+        </div>
+
+        <div>
+          <div className="flex justify-center">
+            <FormAddUser />
+          </div>
+
+          <div className="hidden sm:block" aria-hidden="true">
+            <div className="py-4">
+              <div className="border-t border-gray-200" />
+            </div>
+          </div>
+
+          <div className="md:col-span-1">
+            <div className="pb-2 sm:px-0">
+              <h3 className="text-lg font-medium leading-6 text-gray-900">
+                Search Customer Profile
+              </h3>
+            </div>
+          </div>
+          
+            <SearchBar placeholder="Search" filterAPI={filterUserEmail} />
+          
+          {user.map((current) => {
+            return (
+              <ClientList
+                key={current._id}
+                id={current._id}
+                customerEmail={current.customerEmail}
+                pointsAccumulated={current.pointsAccumulated}
+                services={programs.map((program) => {
+                  return {
+                    service: program.service,
+                    creditSystem: program.creditSystem,
+                  };
+                })}
+                reloadPage={setReload}
+                /*isCredited={setIsCredited}
             creditState={isCredited}
             filterUserEmail={filterUserEmail}*/
-            />
-          );
-        })}
+              />
+            );
+          })}
+        </div>
       </div>
     </>
   );

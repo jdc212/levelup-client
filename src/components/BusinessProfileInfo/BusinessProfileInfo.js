@@ -1,4 +1,4 @@
-import styles from "./BusinessProfileInfo.module.css";
+
 import { useState, useEffect } from "react";
 import api from "../../apis/api";
 
@@ -53,11 +53,28 @@ export default function EditBusinessProfile() {
 }
 
   return (
-    <div className={styles.divPage}>
+    <> 
+
+    <div className="hidden sm:block" aria-hidden="true">
+          <div className="py-5">
+            <div className="border-t border-gray-200" />
+          </div>
+        
+    </div>
+
+    <div className="mt-10 sm:mt-0">
+          <div className="md:grid md:grid-cols-3 md:gap-6">
+            <div className="md:col-span-1">
+              <div className="px-4 sm:px-0">
+                <h2 className="text-lg font-medium leading-6 text-gray-900">Business Profile</h2>
+                <p className="mt-1 text-sm text-gray-600"></p>
+              </div>
+            </div>
+
+      <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
       <form onSubmit={handleSubmit}>
-        <div className={styles.form}>
-          <h2 className={styles.title}>Business Profile</h2>
-          <label htmlFor="name">Business name</label>
+        <div className="">
+          <label htmlFor="name" className="mt-1 text-sm text-gray-600">Business name</label>
           <input
             id="name"
             placeholder="Company Name"
@@ -65,7 +82,7 @@ export default function EditBusinessProfile() {
             value={form.name}
             onChange={handleChange}
           />
-          <label htmlFor="dba">Doing Business As</label>
+          <label htmlFor="dba" className="mt-1 text-sm text-gray-600">Doing Business As</label>
           <input
             id="dba"
             placeholder="DBA"
@@ -73,7 +90,7 @@ export default function EditBusinessProfile() {
             value={form.dba}
             onChange={handleChange}
           />
-          <label htmlFor="CNPJ">CNPJ</label>
+          <label htmlFor="CNPJ" className="mt-1 text-sm text-gray-600">CNPJ</label>
           <input
             id="CNPJ"
             placeholder="CNPJ"
@@ -81,7 +98,7 @@ export default function EditBusinessProfile() {
             value={form.CNPJ}
             onChange={handleChange}
           />
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="mt-1 text-sm text-gray-600">Email</label>
           <input
             id="email"
             type="string"
@@ -90,7 +107,7 @@ export default function EditBusinessProfile() {
             value={form.email}
             onChange={handleChange}
           />
-          <label htmlFor="phone">Phone</label>
+          <label htmlFor="phone" className="mt-1 text-sm text-gray-600">Phone</label>
           <input
             id="phone"
             placeholder="Phone"
@@ -99,7 +116,7 @@ export default function EditBusinessProfile() {
             value={form.phone}
             onChange={handleChange}
           />
-          <label htmlFor="address">Address</label>
+          <label htmlFor="address" className="mt-1 text-sm text-gray-600">Address</label>
           <input
             id="address"
             placeholder="Enter full address"
@@ -166,11 +183,23 @@ export default function EditBusinessProfile() {
           /> */}
           {/*<label htmlFor="img">Link para logo ou imagem de seu projeto:</label>
           <input id="img" name="img" value={form.img} onChange={handleChange} />*/}
-          <button type="submit">
+          <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+          <button 
+          type="submit"
+          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span>Update Profile</span>
           </button>
+          </div>
         </div>
       </form>
+      </div>
+
+      </div>
     </div>
+     
+
+    </>
+  
+    
   );
 };
