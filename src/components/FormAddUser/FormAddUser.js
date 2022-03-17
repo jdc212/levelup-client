@@ -39,7 +39,7 @@ export function FormAddUser() {
       <form onSubmit={handleSubmit}>
         <div className="shadow sm:rounded-md sm:overflow-hidden">
           <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6">
               <div className="col-span-3 sm:col-span-2">
                 <label
                   htmlFor="customerEmail"
@@ -58,7 +58,7 @@ export function FormAddUser() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6">
               <div className="col-span-3 sm:col-span-2">
                 <label
                   htmlFor="pointsAccumulated"

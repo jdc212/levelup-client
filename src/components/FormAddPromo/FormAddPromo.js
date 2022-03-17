@@ -53,14 +53,14 @@ export function FormAddPromo() {
                 >
                   Service
                 </label>
-                <div className="mt-1 w-48 h-5 flex rounded-md shadow-sm">
+                <div className="mt-1 w-52 h-5 flex rounded-md shadow-sm">
                   <input
                     type="text"
                     id="service"
                     name="service"
                     value={form.service}
                     onChange={handleChange}
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-48 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-52 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
               </div>
@@ -71,13 +71,13 @@ export function FormAddPromo() {
                 >
                   Credits per Service
                 </label>
-                <div className="mt-1 w-48 h-5 flex rounded-md shadow-sm">
+                <div className="mt-1 w-52 h-5 flex rounded-md shadow-sm">
                   <select
                     name="creditSystem"
                     id="creditSystem"
                     value={form.creditSystem}
                     onChange={handleChange}
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-48 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-52 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
                   >
                     <option></option>
                     <option value="1">1</option>
@@ -95,14 +95,14 @@ export function FormAddPromo() {
                 >
                   Start Date
                 </label>
-                <div className="mt-1 w-48 h-5 flex rounded-md shadow-sm">
+                <div className="mt-1 w-52 h-5 flex rounded-md shadow-sm">
                   <input
                     type="date"
                     id="launch"
                     name="launch"
                     value={form.launch}
                     onChange={handleChange}
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-48 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-52 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
               </div>
@@ -112,16 +112,16 @@ export function FormAddPromo() {
                   htmlFor="launch"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Deadline
+                  End Date
                 </label>
-                <div className="mt-1 w-48 h-5 flex rounded-md shadow-sm">
+                <div className="mt-1 w-52 h-5 flex rounded-md shadow-sm">
                   <input
                     type="date"
                     id="deadline"
                     name="deadline"
                     value={form.deadline}
                     onChange={handleChange}
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-48 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-52 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
                   />
                 </div>
               </div>
