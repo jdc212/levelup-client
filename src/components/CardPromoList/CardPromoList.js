@@ -10,19 +10,19 @@ export function CardPromoList(props) {
         </p>
         <p className="px-3 text-gray-700 text-base">
           Start date:{" "}
-          {`${props.launch.slice(8, 10)}/${props.launch.slice(
-            5,
-            7
-          )}/${props.launch.slice(2, 4)}`}
+          {props.launch}
         </p>
         <p className="px-3 text-gray-700 text-base">
           End date:{" "}
-          {`${props.deadline.slice(8, 10)}/${props.deadline.slice(
-            5,
-            7
-          )}/${props.deadline.slice(2, 4)}`}
+          {props.deadline}
         </p>
       </div>
     </div>
   );
 }
+
+
+//{props.launch === null ? `${props.launch.slice(8, 10)}/${props.launch.slice(
+//  5,
+//  7
+//)}/${props.launch.slice(2, 4)}` : null}
