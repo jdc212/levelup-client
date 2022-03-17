@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import styles from "./FormAddUser.module.css";
 import api from "../../apis/api";
 
 export function FormAddUser() {
@@ -36,36 +35,59 @@ export function FormAddUser() {
   }
 
   return (
-    <div>
-      <div className={styles.sectionfaq}>
-        <form onSubmit={handleSubmit}>
-          <h3 className={styles.title}>Create User Points</h3>
-          <div className={styles.faqbox}>
-            <div className={styles.faqitem}>
-            <div className={styles.clientList}>
-              <label htmlFor="customerEmail">User Email</label>
-              <input
-                id="customerEmail"
-                name="customerEmail"
-                value={form.customerEmail}
-                onChange={handleChange}
-                className={styles.inputuser}
-              />
-              <label htmlFor="pointsAccumulated">Points to be Credit</label>
-              <input
-                id="pointsAccumulated"
-                name="pointsAccumulated"
-                value={form.pointsAccumulated}
-                className={styles.inputuser}
-                onChange={handleChange}
-              />
-
-              <button type="submit" className={styles.signupbutton}>Create</button>
+    <div className="w-1/2">
+      <form onSubmit={handleSubmit}>
+        <div className="shadow sm:rounded-md sm:overflow-hidden">
+          <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+            <div className="grid grid-cols-3 gap-6">
+              <div className="col-span-3 sm:col-span-2">
+                <label
+                  htmlFor="customerEmail"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  User Email
+                </label>
+                <div className="mt-1 flex rounded-md shadow-sm">
+                  <input
+                    id="customerEmail"
+                    name="customerEmail"
+                    value={form.customerEmail}
+                    onChange={handleChange}
+                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-6">
+              <div className="col-span-3 sm:col-span-2">
+                <label
+                  htmlFor="pointsAccumulated"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Points to be Credit
+                </label>
+                <div className="mt-1 flex rounded-md shadow-sm">
+                  <input
+                    id="pointsAccumulated"
+                    name="pointsAccumulated"
+                    value={form.pointsAccumulated}
+                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </form>
-      </div>
+          <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+            <button
+              type="submit"
+              className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Create
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   );
 }
