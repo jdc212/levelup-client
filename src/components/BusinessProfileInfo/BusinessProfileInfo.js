@@ -76,6 +76,7 @@ export default function EditBusinessProfile() {
         <div className="">
           <label htmlFor="name" className="mt-1 text-sm text-gray-600">Business name</label>
           <input
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             id="name"
             placeholder="Company Name"
             name="name"
@@ -84,6 +85,7 @@ export default function EditBusinessProfile() {
           />
           <label htmlFor="dba" className="mt-1 text-sm text-gray-600">Doing Business As</label>
           <input
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             id="dba"
             placeholder="DBA"
             name="dba"
@@ -92,6 +94,7 @@ export default function EditBusinessProfile() {
           />
           <label htmlFor="CNPJ" className="mt-1 text-sm text-gray-600">CNPJ</label>
           <input
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             id="CNPJ"
             placeholder="CNPJ"
             name="CNPJ"
@@ -100,6 +103,7 @@ export default function EditBusinessProfile() {
           />
           <label htmlFor="email" className="mt-1 text-sm text-gray-600">Email</label>
           <input
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             id="email"
             type="string"
             placeholder="E-mail"
@@ -109,6 +113,7 @@ export default function EditBusinessProfile() {
           />
           <label htmlFor="phone" className="mt-1 text-sm text-gray-600">Phone</label>
           <input
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             id="phone"
             placeholder="Phone"
             name="phone"
@@ -118,6 +123,7 @@ export default function EditBusinessProfile() {
           />
           <label htmlFor="address" className="mt-1 text-sm text-gray-600">Address</label>
           <input
+            className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             id="address"
             placeholder="Enter full address"
             name="address"
