@@ -1,16 +1,17 @@
 import { Route, Routes } from "react-router-dom";
+import { AuthContextComponent } from "./contexts/authContext";
+import { NavBar } from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
 import Corporate from "./pages/Corporate/Corporate";
 import Signup from "./pages/auth/Signup";
 import Login from "./pages/auth/Login";
-import BusinessDashboard from "./pages/BusinessDashboard/BusinessDashboard";
-import { AuthContextComponent } from "./contexts/authContext";
-import { NavBar } from "./components/NavBar/NavBar";
-import { Footer } from "./components/Footer/Footer";
 import BusinessProfileInfo from "./components/BusinessProfileInfo/BusinessProfileInfo";
+import BusinessDashboard from "./pages/BusinessDashboard/BusinessDashboard";
 import ForgotPassword from "./pages/auth/ForgotPassword";
-import NewPassword from "./pages/recoveryPassword/NewPassword";
-import CompensationRules from "./pages/CompensationRules/CompensationRules"
+import NewPassword from "./pages/auth/NewPassword";
+import CompensationRules from "./pages/CompensationRules/CompensationRules";
+// import { Footer } from "./components/Footer/Footer";
+
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route path="/compensation" element={<CompensationRules />} />
         
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </AuthContextComponent>
   );
 }
