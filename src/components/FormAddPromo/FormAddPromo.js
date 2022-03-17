@@ -44,7 +44,7 @@ export function FormAddPromo() {
     <div className="w-1/2">
       <form onSubmit={handleSubmit}>
         <div className="shadow overflow-hidden sm:rounded-md">
-          <div className="px-4 py-5 bg-white sm:p-6">
+          <div className="px-4 py-4 bg-white sm:p-6">
             <div className="grid grid-cols-2 gap-6">
               <div className="col-span-1 sm:col-span-1">
                 <label
@@ -53,16 +53,15 @@ export function FormAddPromo() {
                 >
                   Service
                 </label>
-                <div className="mt-1 w-52 h-5 flex rounded-md shadow-sm">
                   <input
                     type="text"
                     id="service"
                     name="service"
                     value={form.service}
                     onChange={handleChange}
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-52 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="relative w-full bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
-                </div>
+                
               </div>
               <div className="col-span-1 sm:col-span-1">
                 <label
@@ -71,23 +70,21 @@ export function FormAddPromo() {
                 >
                   Credits per Service
                 </label>
-                <div className="mt-1 w-52 h-5 flex rounded-md shadow-sm">
                   <select
                     name="creditSystem"
                     id="creditSystem"
                     value={form.creditSystem}
                     onChange={handleChange}
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-52 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="relative w-full bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   >
                     <option></option>
                     <option value="1">1</option>
                     <option value="1.5">1.5</option>
                     <option value="2">2</option>
                   </select>
-                </div>
               </div>
             </div>
-            <div className="py-4 grid grid-cols-2 gap-6">
+            <div className="py-3 grid grid-cols-2 gap-6">
               <div className="col-span-1 sm:col-span-1">
                 <label
                   htmlFor="launch"
@@ -95,16 +92,15 @@ export function FormAddPromo() {
                 >
                   Start Date
                 </label>
-                <div className="mt-1 w-52 h-5 flex rounded-md shadow-sm">
                   <input
                     type="date"
                     id="launch"
                     name="launch"
                     value={form.launch}
                     onChange={handleChange}
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-52 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="relative w-full bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
-                </div>
+                
               </div>
 
               <div className="col-span-1 sm:col-span-1">
@@ -114,16 +110,15 @@ export function FormAddPromo() {
                 >
                   End Date
                 </label>
-                <div className="mt-1 w-52 h-5 flex rounded-md shadow-sm">
                   <input
                     type="date"
                     id="deadline"
                     name="deadline"
                     value={form.deadline}
                     onChange={handleChange}
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-52 h-5 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="relative w-full bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
-                </div>
+                
               </div>
             </div>
           </div>
