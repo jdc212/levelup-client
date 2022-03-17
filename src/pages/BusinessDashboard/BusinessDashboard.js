@@ -115,7 +115,7 @@ export default function BusinessDashboard() {
         <div className="md:col-span-1">
           <div className="pb-2 sm:px-0">
             <h3 className="text-lg font-medium leading-6 text-gray-900">
-              Create User Points
+              Create Customer Points
             </h3>
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function BusinessDashboard() {
           <div className="md:col-span-1">
             <div className="pb-2 sm:px-0">
               <h3 className="text-lg font-medium leading-6 text-gray-900">
-                Search User Points
+                Search Customer Profile
               </h3>
             </div>
           </div>
