@@ -45,7 +45,7 @@ export function FormAddUser() {
                   htmlFor="customerEmail"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  User Email
+                  Customer Email
                 </label>
                 <div className="mt-1 flex rounded-md shadow-sm">
                   <input
