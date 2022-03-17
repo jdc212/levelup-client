@@ -46,9 +46,9 @@ export function ClientList(props) {
 
   return (
     <div className="max-w-sm bg-white overflow-hidden shadow sm:rounded-md">
-      <div className="">
-    <h3 className="">Customer Points</h3>
-      <div className="">
+      <div className="block text-sm font-medium text-gray-700">
+        <h4 className="">Customer Points</h4>
+        <div className="">
         <div className="">
           <div className="mt-1 w-130 flex rounded-md shadow-sm">
             <section>
