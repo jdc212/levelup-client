@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  AnnotationIcon,
-  GlobeAltIcon,
-  LightningBoltIcon,
+  CubeIcon,
+  GlobeIcon,
+  GiftIcon,
 } from "@heroicons/react/outline";
 
 function Corporate() {
@@ -14,7 +14,7 @@ function Corporate() {
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             <span className="block">Read to be rewarded?</span>
             <span className="block text-indigo-600">
-              Level Up is the easiest way.
+              Level Up is the easiest way
             </span>
           </h2>
         </div>
@@ -24,10 +24,10 @@ function Corporate() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">
-              For you
+              For Clients
             </h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              AAA
+              Your loyalty worth a lot
             </p>
           </div>
 
@@ -36,34 +36,31 @@ function Corporate() {
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                    <LightningBoltIcon className="h-6 w-6" aria-hidden="true" />
+                    <GiftIcon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                    AAA
+                  Be rewarded
                   </p>
                 </dt>
                 <dd className="mt-2 ml-16 text-base text-gray-500">
-                  AAA
+                Shop at your favorite stores and collect points to redeem for products and services.
                 </dd>
               </div>
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                    <AnnotationIcon className="h-6 w-6" aria-hidden="true" />
+                    <CubeIcon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
-                  AAA
+                    Single Platform
                   </p>
                 </dt>
-                <dd className="mt-2 ml-16 text-base text-gray-500">
-                AAA
-
-                </dd>
+                <dd className="mt-2 ml-16 text-base text-gray-500">Have all your points on a single platform, which can be consulted at participating establishments.</dd>
               </div>
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                    <GlobeAltIcon className="h-6 w-6" aria-hidden="true" />
+                    <GlobeIcon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
                     No more paper
