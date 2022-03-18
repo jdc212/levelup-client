@@ -1,4 +1,3 @@
-//import styles from "./CompensationRules.module.css";
 import { useState, useEffect } from "react";
 import api from "../../apis/api";
 import { FormAddCompensationRules } from "../../components/FormAddCompensationRules/FormAddCompensationRules";
