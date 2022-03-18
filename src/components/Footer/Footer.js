@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logo from "../../assets/styles/logo-v1.png"
 
 export function Footer() {
   return (
@@ -12,7 +13,7 @@ export function Footer() {
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md">
               <h2 className="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                <p className="text-indigo-600 text-5xl">Level Up</p>              
+                <img className="h-16" src={Logo} alt=""/>
               </h2>
             </div>
           </div>
@@ -41,7 +42,7 @@ export function Footer() {
           </div>
           <div className="m-0 px-0 bg-white-50">
           <div className="py-6 px-8 md:flex md:items-center md:justify-between ">
-            <span className="px-8 text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://https://leveluployalty.netlify.app/" class="hover:underline">LevelUp™</a>. All Rights Reserved.
+            <span className="px-24 text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://https://leveluployalty.netlify.app/" class="hover:underline">LevelUp™</a>. All Rights Reserved.
             </span>
           </div>
           </div>
