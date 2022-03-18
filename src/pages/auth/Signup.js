@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { NavBar } from "../../components/NavBar/NavBar";
+import Logo from "../../assets/styles/LevelUpOfficialLogo-gray.png"
 
 function Signup(props) {
   const [loading, setLoading] = useState(false);
@@ -98,8 +99,8 @@ function Signup(props) {
         <div className="max-w-md w-full space-y-8">
           <div>
             <img
-              className="mx-auto h-12 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+              className="mx-auto h-14 w-auto"
+              src={Logo}
               alt="Workflow"
             />
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">

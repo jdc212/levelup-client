@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Popover } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
+import Logo from "../../assets/styles/LevelUpOfficialLogo.png"
 
 export function NavBar() {
   return (
@@ -11,8 +12,8 @@ export function NavBar() {
             <Link to="/">
               <span className="sr-only">Workflow</span>
               <img
-                className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                className="h-12 w-auto"
+                src={Logo}
                 alt=""
               />
             </Link>

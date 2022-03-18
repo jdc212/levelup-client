@@ -10,7 +10,7 @@ import ForgotPassword from "./pages/auth/ForgotPassword";
 import NewPassword from "./pages/auth/NewPassword";
 import CompensationRules from "./pages/CompensationRules/CompensationRules";
 import { Footer } from "./components/Footer/Footer";
-
+import Clients from "./pages/Clients/Clients";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/corporate" element={<Corporate />} />
+        <Route path="/clients" element={<Clients />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/businessprofileinfo" element={<BusinessProfileInfo />} />
