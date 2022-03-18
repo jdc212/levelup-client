@@ -139,6 +139,7 @@ export default function BusinessDashboard() {
               <h3 className="text-lg font-medium leading-6 text-gray-900">
                 Search Customer Profile
               </h3>
+            </div>
           </div>
 
           
