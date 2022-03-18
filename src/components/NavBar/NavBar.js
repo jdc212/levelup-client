@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Popover } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
-import Logo from "../../assets/styles/logo-v1-resized.png"
+import Logo from "../../assets/styles/LevelUpOfficialLogo.png"
 
 export function NavBar() {
   return (
