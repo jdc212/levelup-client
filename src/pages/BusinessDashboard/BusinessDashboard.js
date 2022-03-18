@@ -63,7 +63,7 @@ export default function BusinessDashboard() {
 
   return (
     <>
-      <div className="px-4 bg-gray-50">
+      <div className="px-16 bg-gray-50">
         <div className="md:col-span-1">
           <div className="pt-4 pb-0 sm:px-0">
             <h3 className="text-lg font-medium leading-6 text-gray-900">
@@ -89,21 +89,24 @@ export default function BusinessDashboard() {
             </h3>
           </div>
         </div>
-
-        <div className="grid grid-cols-3 gap-6">
-          {programs.map((current) => {
-            return (
-              <CardPromoList
-                key={current._id}
-                id={current._id}
-                creditSystem={current.creditSystem}
-                launch={current.launch}
-                deadline={current.deadline}
-                service={current.service}
-                reloadPage={setReload}
-              />
-            );
-          })}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-3 grid-rows-3 gap-6">
+            {programs.map((current) => {
+              return (
+                <div className="px-3">
+                  <CardPromoList
+                    key={current._id}
+                    id={current._id}
+                    creditSystem={current.creditSystem}
+                    launch={current.launch}
+                    deadline={current.deadline}
+                    service={current.service}
+                    reloadPage={setReload}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="hidden sm:block" aria-hidden="true">
@@ -138,9 +141,9 @@ export default function BusinessDashboard() {
               </h3>
             </div>
           </div>
-          
-            <SearchBar placeholder="Search" filterAPI={filterUserEmail} />
-          
+
+          <SearchBar placeholder="Search" filterAPI={filterUserEmail} />
+
           {user.map((current) => {
             return (
               <ClientList
