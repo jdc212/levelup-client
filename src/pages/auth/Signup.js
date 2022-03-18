@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 import { LockClosedIcon } from "@heroicons/react/solid";
+import { NavBar } from "../../components/NavBar/NavBar";
 
 function Signup(props) {
   const [loading, setLoading] = useState(false);
@@ -90,6 +91,8 @@ function Signup(props) {
   });
 
   return (
+    <>
+    <NavBar />
     <div className="h-full w-full bg-gray-50">
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
@@ -332,6 +335,7 @@ function Signup(props) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
