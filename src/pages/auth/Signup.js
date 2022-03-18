@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 import { LockClosedIcon } from "@heroicons/react/solid";
-import Logo from "../../assets/styles/logo-bg-gray-resized.png"
+import Logo from "../../assets/styles/LevelUpOfficialLogo-gray.png"
 
 function Signup(props) {
   const [loading, setLoading] = useState(false);

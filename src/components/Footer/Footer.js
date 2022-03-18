@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../../assets/styles/logo-v1.png"
+import Logo from "../../assets/styles/LevelUpOfficialLogo.png"
 
 export function Footer() {
   return (
