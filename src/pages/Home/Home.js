@@ -155,7 +155,7 @@ function Home() {
                   </p>
                 </dt>
                 <dd className="mt-2 ml-16 text-base text-gray-500">
-                  Talon. One is endlessly scalable. Connect your customer data,
+                  Level Up app is endlessly scalable. Connect your customer data,
                   integrate with any 3rd parties and optimize on the fly.
                 </dd>
               </div>
