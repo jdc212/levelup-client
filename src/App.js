@@ -10,7 +10,7 @@ import BusinessDashboard from "./pages/BusinessDashboard/BusinessDashboard";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import NewPassword from "./pages/auth/NewPassword";
 import CompensationRules from "./pages/CompensationRules/CompensationRules";
-// import { Footer } from "./components/Footer/Footer";
+import { Footer } from "./components/Footer/Footer";
 
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         <Route path="/compensation" element={<CompensationRules />} />
         
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </AuthContextComponent>
   );
 }
