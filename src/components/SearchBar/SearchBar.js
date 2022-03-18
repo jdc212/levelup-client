@@ -2,9 +2,9 @@ export function SearchBar(props) {
   return (
     <div className="">      
           <div className="shadow-sm sm:rounded-md sm:overflow-hidden">
-            <div className="px-0 py-0 pb-0 bg-white space-y-1 sm:p-1">
+            <div className="px-20 py-4 bg-white space-y-6 sm:p-6">
               <div className="grid grid-cols-1 gap-6">
-                <div className="col-span-1 sm:col-span-2">
+                <div className="col-span-3 sm:col-span-2">
                   <div className="flex rounded-md shadow-xs">
                     <input
                       type="text"
@@ -28,3 +28,4 @@ export function SearchBar(props) {
     </div>
   );
 }
+
