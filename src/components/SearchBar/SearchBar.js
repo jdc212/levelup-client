@@ -1,6 +1,6 @@
 export function SearchBar(props) {
   return (
-    <div className="">      
+    <div className="px-20">      
           <div className="shadow-sm sm:rounded-md sm:overflow-hidden">
             <div className="px-20 py-4 bg-white space-y-6 sm:p-6">
               <div className="grid grid-cols-1 gap-6">
