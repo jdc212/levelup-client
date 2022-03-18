@@ -142,7 +142,8 @@ export default function BusinessDashboard() {
             </div>
           </div>
 
-          <div className="">
+          
+          <div className="mt-8">
             <SearchBar placeholder="Search" filterAPI={filterUserEmail} />
           </div>
           
