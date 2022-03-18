@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import { AuthContextComponent } from "./contexts/authContext";
-import { NavBar } from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
 import Corporate from "./pages/Corporate/Corporate";
 import Signup from "./pages/auth/Signup";
@@ -16,7 +15,6 @@ import Clients from "./pages/Clients/Clients";
 function App() {
   return (
     <AuthContextComponent>
-      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/corporate" element={<Corporate />} />
@@ -27,8 +25,7 @@ function App() {
         <Route path="/businessdashboard" element={<BusinessDashboard />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/new-password/:token" element={<NewPassword />} />
-        <Route path="/compensation" element={<CompensationRules />} />
-        
+        <Route path="/compensation" element={<CompensationRules />} />  
       </Routes>
       <Footer />
     </AuthContextComponent>

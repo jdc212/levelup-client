@@ -4,15 +4,17 @@ import logo from "../../assets/styles/v1069-011.jpg";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
+import { NavBar } from "../../components/NavBar/NavBar";
 import {
-  AnnotationIcon,
-  GlobeAltIcon,
-  LightningBoltIcon,
+  CloudIcon,
+  CollectionIcon,
+  AdjustmentsIcon,
 } from "@heroicons/react/outline";
 
 function Home() {
   return (
     <>
+      <NavBar />
       <div className="relative bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -120,7 +122,7 @@ function Home() {
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                    <LightningBoltIcon className="h-6 w-6" aria-hidden="true" />
+                    <CollectionIcon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
                     Data-driven promotions
@@ -134,7 +136,7 @@ function Home() {
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                    <AnnotationIcon className="h-6 w-6" aria-hidden="true" />
+                    <AdjustmentsIcon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
                     One single UI
@@ -148,7 +150,7 @@ function Home() {
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                    <GlobeAltIcon className="h-6 w-6" aria-hidden="true" />
+                    <CloudIcon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
                     Cloud native and extendable

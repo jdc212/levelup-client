@@ -5,6 +5,8 @@ import { CardPromoList } from "../../components/CardPromoList/CardPromoList";
 import { FormAddPromo } from "../../components/FormAddPromo/FormAddPromo";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import api from "../../apis/api";
+import DashboardNavBar from "./DashboardNavBar";
+
 
 export default function BusinessDashboard() {
   const [programs, setPrograms] = useState([]);
@@ -63,6 +65,7 @@ export default function BusinessDashboard() {
 
   return (
     <>
+      <DashboardNavBar/>
       <div className="px-16 bg-gray-50">
         <div className="md:col-span-1">
           <div className="pt-4 pb-0 sm:px-0">

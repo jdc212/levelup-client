@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast, { Toaster } from "react-hot-toast";
 import { LockClosedIcon } from "@heroicons/react/solid";
+import { NavBar } from "../../components/NavBar/NavBar";
 import Logo from "../../assets/styles/LevelUpOfficialLogo-gray.png"
 
 
@@ -58,6 +59,7 @@ function Login(props) {
 
   return (
     <>
+      <NavBar />
       <div className="h-full w-full bg-gray-50">
         <div className="h-full w-full">
           <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
