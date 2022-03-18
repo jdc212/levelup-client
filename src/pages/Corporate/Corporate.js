@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { NavBar } from "../../components/NavBar/NavBar";
 import {
   AnnotationIcon,
   GlobeAltIcon,
-  LightningBoltIcon,
+  CloudIcon,
 } from "@heroicons/react/outline";
 
 function Corporate() {
   return (
     <>
+    <NavBar />
     <div className="bg-gray-50">
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
       <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
@@ -43,7 +45,7 @@ function Corporate() {
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                    <LightningBoltIcon className="h-6 w-6" aria-hidden="true" />
+                    <AnnotationIcon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
                     About us
@@ -56,7 +58,7 @@ function Corporate() {
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                    <AnnotationIcon className="h-6 w-6" aria-hidden="true" />
+                    <GlobeAltIcon className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
                     Level Up Is Global
@@ -69,7 +71,7 @@ function Corporate() {
               <div className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                    <GlobeAltIcon className="h-6 w-6" aria-hidden="true" />
+                    <CloudIcon  className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
                     Cloud native and extendable
