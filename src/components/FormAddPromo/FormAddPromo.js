@@ -44,7 +44,9 @@ export function FormAddPromo({ onSubmit }) {
           <div className="border-t border-gray-200" />
         </div>
       </div>
-      <div className="bg-gray-50">
+
+      <div className="bg-gray-50 md:grid md:grid-cols-3 md:gap-6">
+      
         <div className="mt-10 sm:mt-0">
           <div className="md:grid md:grid-cols-2 md:gap-6">
             <div className="md:col-span-1">
@@ -56,12 +58,12 @@ export function FormAddPromo({ onSubmit }) {
                   Create Promotion
                 </h3>
                 <p className="mt-1 text-sm text-gray-600">
-                  Use a permanent address where you can receive mail.
+                 
                 </p>
               </div>
             </div>
 
-            <div className="mt-5 md:mt-0 md:col-span-2">
+            <div className="mt-5 md:mt-0 md:col-span-3">
               <form onSubmit={handleSubmit}>
                 <div className="shadow overflow-hidden sm:rounded-md">
                   <div className="px-4 py-4 bg-white sm:p-6">
