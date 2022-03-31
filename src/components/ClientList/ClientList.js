@@ -50,20 +50,20 @@ export function ClientList(props) {
           <div className="border-t border-gray-200" />
         </div>
       </div>
-      <div className="bg-gray-50 md:grid md:grid-cols-3 md:gap-6">
+      <div className="bg-gray-50">
         <div className="mt-10 sm:mt-0">
           <div className="md:grid md:grid-cols-2 md:gap-6">
             <div className="md:col-span-1">
-              <div className="px-4 sm:px-0 pb-8">
+              <div className="px-4 sm:px-0">
                 <h3 className="text-lg font-medium leading-6 text-gray-900">
                   Customer Points
                 </h3>
                 <p className="mt-1 text-sm text-gray-600">
-                 
+                  Use a permanent address where you can receive mail.
                 </p>
               </div>
 
-              <div className="mt-5 md:mt-0 md:col-span-3">
+              <div className="mt-5 md:mt-0 md:col-span-2">
                 <div className="shadow sm:rounded-md sm:overflow-hidden">
                   <div className="px-4 py-4 bg-white sm:p-6">
                     <div className="grid grid-cols-1 gap-6">
@@ -129,7 +129,6 @@ export function ClientList(props) {
                     </div>
                   </div>
                 </form>
-                <div className="pb-3" />
                 <div className="mt-5 md:mt-0 md:col-span-2">
                   <form onSubmit={handleSubmitCompensate}>
                     <div className="shadow sm:rounded-md sm:overflow-hidden">

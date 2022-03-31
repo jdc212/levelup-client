@@ -69,7 +69,7 @@ export default function BusinessDashboard() {
   return (
     <>
       <DashboardNavBar />
-      <div className="px-16 bg-gray-50 pt-6">
+      <div className="px-16 bg-gray-50">
         <FormAddPromo onSubmit={handleProgramAdded} />
 
         <div className="sm:block" aria-hidden="true">
@@ -87,7 +87,7 @@ export default function BusinessDashboard() {
                     Registered Promotions
                   </h3>
                   <p className="mt-1 text-sm text-gray-600">
-                   
+                    Use a permanent address where you can receive mail.
                   </p>
                 </div>
               </div>

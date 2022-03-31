@@ -51,7 +51,7 @@ export default function EditBusinessProfile() {
   return (
     <>
       <DashboardNavBar />
-      <div className="px-16 bg-gray-50 md:grid md:grid-cols-3 md:gap-6 pt-6">
+      <div className="px-16 bg-gray-50">
         <div className="sm:block" aria-hidden="true">
           <div className="py-4">
             <div className="border-t border-gray-200" />
@@ -66,12 +66,12 @@ export default function EditBusinessProfile() {
                     Business Profile
                   </h3>
                   <p className="mt-1 text-sm text-gray-600">
-                    
+                    Use a permanent address where you can receive mail.
                   </p>
                 </div>
               </div>
 
-              <div className="mt-5 md:mt-0 md:col-span-3 text-right">
+              <div className="mt-5 md:mt-0 md:col-span-2 text-right">
                 <form onSubmit={handleSubmit}>
                   <div className="shadow overflow-hidden sm:rounded-md">
                     <div className="px-4 py-4 bg-white space-y-6 sm:p-6">
