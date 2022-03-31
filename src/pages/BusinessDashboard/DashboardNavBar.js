@@ -1,72 +1,85 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 import logo from "../../assets/styles/LogoMakr.png";
 import { Popover } from "@headlessui/react";
-
+import { AuthContext } from "../../contexts/authContext";
+import { useState, useContext, useEffect } from "react";
 
 const navigation = [
-  { name: 'Dashboard', page: '#', current: true },
-  { name: 'Profile', page: '/businessprofileinfo', current: false },
-  { name: 'Compensation Rules', page: '/compensation', current: false },
-]
+  { name: "Dashboard", page: "#", current: true },
+  { name: "Profile", page: "/businessprofileinfo", current: false },
+  { name: "Compensation Rules", page: "/compensation", current: false },
+];
 
 const navigation2 = [
-  { name: 'Create Promotion', page: '/', current: false },
-  { name: 'Registered Promotions', page: '/', current: false },
-  { name: 'Create Customer Points', page: '/', current: false },
-  { name: 'Search Customer Profile', page: '/', current: false },
-]
+  { name: "Create Promotion", page: "/", current: false },
+  { name: "Registered Promotions", page: "/", current: false },
+  { name: "Create Customer Points", page: "/", current: false },
+  { name: "Search Customer Profile", page: "/", current: false },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function DashboardNavBar() {
+  const { logout, loggedInUser } = useContext(AuthContext);
+  const [login, setLogin] = useState(false);
+  const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    if (loggedInUser.user.id) {
+      setLogin(true);
+    } else {
+      setLogin(false);
+    }
+    setToggle(false);
+  }, [loggedInUser]);
+
   return (
     <>
-    <Popover className="relative bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link to="/">
-              <span className="sr-only">Workflow</span>
-              <img
-                className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                alt=""
-              />
+      <Popover className="relative bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+            <div className="flex justify-start lg:w-0 lg:flex-1">
+              <Link to="/">
+                <span className="sr-only">Workflow</span>
+                <img
+                  className="h-8 w-auto sm:h-10"
+                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                  alt=""
+                />
+              </Link>
+            </div>
+            <div className="-mr-2 -my-2 md:hidden">
+              <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <span className="sr-only">Open menu</span>
+                <MenuIcon className="h-6 w-6" aria-hidden="true" />
+              </Popover.Button>
+            </div>
+
+            <Link
+              to="/"
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              Business
+            </Link>
+            <Link
+              to="/clients"
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              Clients
+            </Link>
+            <Link
+              to="/corporate"
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              Corporate
             </Link>
           </div>
-          <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-              <span className="sr-only">Open menu</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
-            </Popover.Button>
-          </div>
-
-          <Link
-            to="/"
-            className="text-base font-medium text-gray-500 hover:text-gray-900"
-          >
-            Business
-          </Link>
-          <Link
-            to="/clients"
-            className="text-base font-medium text-gray-500 hover:text-gray-900"
-          >
-            Clients
-          </Link>
-          <Link
-            to="/corporate"
-            className="text-base font-medium text-gray-500 hover:text-gray-900"
-          >
-            Corporate
-          </Link>
-
         </div>
-      </div>
       </Popover>
       <Disclosure as="nav" className="bg-gray-800 pb-2 pt-3">
         {({ open }) => (
@@ -85,8 +98,7 @@ export default function DashboardNavBar() {
                   </Disclosure.Button>
                 </div>
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start px-20">
-                  <div className="flex-shrink-0 flex items-center">
-                  </div>
+                  <div className="flex-shrink-0 flex items-center"></div>
                   <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
                       {navigation.map((item) => (
@@ -94,10 +106,12 @@ export default function DashboardNavBar() {
                           key={item.name}
                           to={item.page}
                           className={classNames(
-                            item.current ? 'bg-gray-900 font-extrabold border border-indigo-600' : 'text-indigo-600 font-extrabold hover:bg-gray-700 hover:text-white',
-                            'px-3 py-2 rounded-md text-sm font-medium'
+                            item.current
+                              ? "bg-gray-900 font-extrabold border border-indigo-600"
+                              : "text-indigo-600 font-extrabold hover:bg-gray-700 hover:text-white",
+                            "px-3 py-2 rounded-md text-sm font-medium"
                           )}
-                          aria-current={item.current ? 'page' : undefined}
+                          aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
                         </Link>
@@ -131,7 +145,10 @@ export default function DashboardNavBar() {
                           {({ active }) => (
                             <Link
                               to="/businessprofileinfo"
-                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
                             >
                               Your Profile
                             </Link>
@@ -141,7 +158,10 @@ export default function DashboardNavBar() {
                           {({ active }) => (
                             <Link
                               to="#"
-                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
                             >
                               Settings
                             </Link>
@@ -150,8 +170,16 @@ export default function DashboardNavBar() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              to="#"
-                              className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                              to="/"
+                              onClick={() => {
+                                logout();
+                                setLogin(false);
+                                setToggle(false);
+                              }}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
                             >
                               Sign out
                             </Link>
@@ -172,10 +200,12 @@ export default function DashboardNavBar() {
                     as="a"
                     href={item.page}
                     className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'block px-3 py-2 rounded-md text-base font-medium'
+                      item.current
+                        ? "bg-gray-900 text-white"
+                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      "block px-3 py-2 rounded-md text-base font-medium"
                     )}
-                    aria-current={item.current ? 'page' : undefined}
+                    aria-current={item.current ? "page" : undefined}
                   >
                     {item.name}
                   </Disclosure.Button>
@@ -185,6 +215,6 @@ export default function DashboardNavBar() {
           </>
         )}
       </Disclosure>
-      </>
-  )
+    </>
+  );
 }

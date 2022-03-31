@@ -1,0 +1,50 @@
+
+  
+.faqitem {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .faqbox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-family: Poppins, sans-serif;
+  }
+
+  .sectionfaq {
+    padding-bottom: 10px;
+    border-left: 40px solid #fff;
+    border-bottom: 40px solid #fff;
+    border-right: 40px solid #fff;
+    background-color: #debebf;
+    font-family: Poppins, sans-serif;
+  }
+  
+  .title {
+    color: #0c2638;
+    margin-top: 0px;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-left: 50px;
+    display: flex;
+  
+    align-items: left;
+  }
+
+  .searchBar{
+    margin-right: 10px;
+    width: 1480px;
+    height: 30px;
+    border: none;
+  }
