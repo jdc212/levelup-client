@@ -6,7 +6,8 @@ import logo from "../../assets/styles/LogoMakr.png";
 import { Popover } from "@headlessui/react";
 import Logo from "../../assets/styles/LevelUpOfficialLogo2.png";
 import { HashLink } from 'react-router-hash-link';
-
+import { AuthContext } from "../../contexts/authContext";
+import { useState, useContext, useEffect } from "react";
 
 const navigation = [
   { name: "Dashboard", page: "/businessDashboard", current: true },
@@ -26,6 +27,19 @@ function classNames(...classes) {
 }
 
 export default function DashboardNavBar() {
+  const { logout, loggedInUser } = useContext(AuthContext);
+  const [login, setLogin] = useState(false);
+  const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    if (loggedInUser.user.id) {
+      setLogin(true);
+    } else {
+      setLogin(false);
+    }
+    setToggle(false);
+  }, [loggedInUser]);
+
   return (
     <Popover>
       <Popover className="relative bg-white">
@@ -167,7 +181,12 @@ export default function DashboardNavBar() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              to="#"
+                              to="/"
+                              onClick={() => {
+                                logout();
+                                setLogin(false);
+                                setToggle(false);
+                              }}
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
