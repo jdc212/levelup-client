@@ -2,6 +2,7 @@ import { useState } from "react";
 import api from "../../apis/api";
 import DashboardNavBar from "../../pages/BusinessDashboard/DashboardNavBar";
 
+
 export function FormAddCompensationRules(props) {
   const [form, setForm] = useState({
     launch: "",
@@ -60,12 +61,12 @@ export function FormAddCompensationRules(props) {
                   </p>
                 </div>
               </div>
-              <div className="mt-5 md:mt-0 md:col-span-2">
+              <div className="mt-5 md:mt-0 ">
                 <form onSubmit={handleSubmit}>
                   <div className="shadow overflow-hidden sm:rounded-md">
                     <div className="px-4 py-4 bg-white sm:p-6">
                       <div className="grid grid-cols-1 gap-6">
-                        <div className="col-span-1 sm:col-span-2">
+                        <div className="col-span-1 sm:col-span-1">
                           <label
                             htmlFor="rules"
                             className="block text-sm font-medium text-gray-700"
@@ -132,6 +133,12 @@ export function FormAddCompensationRules(props) {
               </div>
               <div className="hidden sm:block py-0" aria-hidden="true" />
             </div>
+          </div>
+        </div>
+
+        <div className="sm:block" aria-hidden="true">
+          <div className="py-5">
+            <div className="border-t border-gray-200" />
           </div>
         </div>
       </div>

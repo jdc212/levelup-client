@@ -17,7 +17,7 @@ export function SearchBar(props) {
                 </p>
               </div>
             </div>
-            <div className="mt-5 md:mt-0 md:col-span-2">
+            <div className="mt-5 md:mt-0">
               <div className="shadow sm:rounded-md sm:overflow-hidden">
                 <div className="px-4 py-4 bg-white space-y-6 sm:p-6">
                   <div className="grid grid-cols-1 gap-6">

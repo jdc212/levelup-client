@@ -2,7 +2,7 @@ export function CompensationRulesList(props) {
   return (
     <>
       <div className="max-w-sm bg-white overflow-hidden shadow sm:rounded-md mt-5 md:mt-0">
-        <div className="pt-3 pb-1 align-midle text-black bg-gray-100 text-center sm:px-6">
+        <div className="pt-3 pb-1 align-midle text-white bg-indigo-600 text-center sm:px-6">
           <h4 className="text-base">{` ${props.service} Promotion`}</h4>
         </div>
         <div className="py-3">
