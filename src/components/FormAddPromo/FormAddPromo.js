@@ -39,7 +39,7 @@ export function FormAddPromo({ onSubmit }) {
 
   return (
     <>
-      <div className="sm:block" aria-hidden="true">
+      <div className="sm:block py-5" aria-hidden="true">
         <div className="py-5">
           <div className="border-t border-gray-200" />
         </div>
@@ -61,7 +61,7 @@ export function FormAddPromo({ onSubmit }) {
               </div>
             </div>
 
-            <div className="mt-5 md:mt-0 md:col-span-2">
+            <div className="mt-5 md:mt-0">
               <form onSubmit={handleSubmit}>
                 <div className="shadow overflow-hidden sm:rounded-md">
                   <div className="px-4 py-4 bg-white sm:p-6">

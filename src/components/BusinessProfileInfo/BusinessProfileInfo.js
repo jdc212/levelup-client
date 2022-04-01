@@ -52,8 +52,8 @@ export default function EditBusinessProfile() {
     <>
       <DashboardNavBar />
       <div className="px-16 bg-gray-50">
-        <div className="sm:block" aria-hidden="true">
-          <div className="py-4">
+        <div className="sm:block py-5" aria-hidden="true">
+          <div className="py-5">
             <div className="border-t border-gray-200" />
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function EditBusinessProfile() {
                 </div>
               </div>
 
-              <div className="mt-5 md:mt-0 md:col-span-2 text-right">
+              <div className="mt-5 md:mt-0 text-right">
                 <form onSubmit={handleSubmit}>
                   <div className="shadow overflow-hidden sm:rounded-md">
                     <div className="px-4 py-4 bg-white space-y-6 sm:p-6">

@@ -92,8 +92,8 @@ export default function BusinessDashboard() {
                 </div>
               </div>
 
-              <div className="flex justify-center">
-                <div className="grid grid-cols-3 grid-rows-3 gap-6">
+              <div className="mt-5 md:mt-0 shadow overflow-hidden sm:rounded-md px-8 py-4 sm:p-3 ">
+                <div className="grid grid-cols-2 grid-rows-3 gap-6 col-span-1 sm:col-span-2">
                   {programs.map((current) => {
                     return (
                       <CardPromoList
